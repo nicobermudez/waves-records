@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+nico = User.create({name: "Nico", spotify_id: "", spotify_url: ""})
+
+deep_house_playlist = Playlist.create({name: "Deep House Hits", followers: 500 })
+
+nico.playlists << deep_house_playlist
