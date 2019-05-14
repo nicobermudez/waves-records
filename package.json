@@ -1,5 +1,7 @@
 {
   "name": "waves-records",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "ajax": "0.0.4"
+  }
 }
