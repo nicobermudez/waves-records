@@ -9,5 +9,9 @@
 nico = User.create({name: "Nico", spotify_id: "", spotify_url: ""})
 
 deep_house_playlist = Playlist.create({name: "Deep House Hits", followers: 500 })
+nostalgic_playlist = Playlist.create({name: "Nostalgic", followers: 300 })
+happy_playlist = Playlist.create({name: "Happy in the Sun", followers: 400 })
+gym_playlist = Playlist.create({name: "Time to Grind", followers: 1500 })
+
 
 nico.playlists << deep_house_playlist
