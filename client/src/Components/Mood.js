@@ -1,5 +1,18 @@
 import React, { Component } from 'react'
 export default class Mood extends Component {
+  state = {
+    mood: "Happy"
+  }
+
+  handleMoodChange = event => {
+    this.setState({
+      mood: event.target.value
+    })
+  }
+
+  handleSubmit = event => {
+    event.preventDefault()
+  }
 
   // analyzeImage = () => {
   //   const image='https://www.bolde.com/wp-content/uploads/2018/09/iStock-918377480-400x400.jpg'
@@ -26,8 +39,16 @@ export default class Mood extends Component {
 
   render() {
     return (
-      <div className="uploadImage">
-        <p>Upload Photo</p>
+      <div className="mood">
+        <form onSubmit={event => this.handleSubmit(event)}>
+          <input
+            type="text"
+            name="mood"
+            id="mood"
+            value={this.state.mood}
+            onChange={this.handleMoodChange}
+          />
+        </form>
       </div>
     )
   }

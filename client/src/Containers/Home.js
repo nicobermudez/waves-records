@@ -18,6 +18,7 @@ export default class Home extends Component {
       <>
         {/*<Auth />*/}
         <section className="home">
+          <Mood />
           <Playlists />
         </section>
 
