@@ -8,11 +8,11 @@
 
 nico = User.create({name: "Nico", spotify_id: "", spotify_url: ""})
 
-deep_house_playlist = Playlist.create({name: "Deep House Hits", image: File.open(Rails.root + 'app/assets/images/deep_house.jpg')})
+deep_house_playlist = Playlist.create({name: "Deep House Hits", href: 'https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjB8_rShc7iAhVwxFkKHba1A-EQjRx6BAgBEAU&url=https%3A%2F%2Fopen.spotify.com%2Fuser%2Fspotify%2Fplaylist%2F37i9dQZF1DX2TRYkJECvfC&psig=AOvVaw2PK8xI4gn15xi4pLa85PSk&ust=1559676435197441'})
 
 nostalgic_playlist = Playlist.create({name: "Nostalgic"})
 happy_playlist = Playlist.create({name: "Happy in the Sun"})
 gym_playlist = Playlist.create({name: "Time to Grind"})
 
 
-nico.playlists << deep_house_playlist
+nico.playlists.push(deep_house_playlist)

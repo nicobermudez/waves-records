@@ -17,13 +17,9 @@ export default class Home extends Component {
     return (
       <>
         {/*<Auth />*/}
-        <div className="login">
-          <Mood />
-        </div>
-
-        <div className="featured">
+        <section className="home">
           <Playlists />
-        </div>
+        </section>
 
       </>
 

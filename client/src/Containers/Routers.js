@@ -10,11 +10,10 @@ class Routers extends Component {
     return (
       <Router>
         <div className="Nav-bar">
+          <Link to="/">Home</Link>
           <Link to="/login">Log In</Link>
           <Link to="/analyze">Analyze</Link>
         </div>
-        <Route exact path='/login' component={Auth} />
-        <Route exact path ='/analyze' component={Mood} />
       </Router>
     )
   }
