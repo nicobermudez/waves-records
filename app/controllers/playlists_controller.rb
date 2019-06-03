@@ -1,6 +1,9 @@
+require 'pry'
+
 class PlaylistsController < ApplicationController
 
   def index
+    binding.pry
     render json: Playlist.all
   end
 
@@ -12,7 +15,9 @@ class PlaylistsController < ApplicationController
 
   def playlist_params
     params.require(:playlist).permit(
-      :name
+      :name,
+      :href,
+      :image
     )
   end
 end
