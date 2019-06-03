@@ -11,7 +11,7 @@ export default class Playlists extends Component {
     fetch(url, {
       headers: {
         Accept: "application/json",
-        Authorization: "Bearer BQCFX-62FIetLbG73HzmTuaS56bL0_7Z3AOibz85PyQTWgCXfwXfLUbsKmo6Yk7e_s5jhTbeLUKTCVTXgFEpMv-FXAxMrZqZraIFL-04P8rdzeUIQ7c9Hxe1ipka5lQUp_ZTNwkDbPWEERLC8m6xq4Q1XdSIMrsr",
+        Authorization: "Bearer BQBQtGxw6888nwjQFAH66exeTgl5quqMBxA_I_gOJvbWwW4Qlvy2b5crISlq4U9sQjB5Z3NWCWXsreLAK0izEoS0I_4y3Ga8S7gIWWK6aPJiWPos5ZMwu7Vt2FOnCa7pGcHH37FU9gEhkIR9qiP9i1fuJ7kjVxuz",
         "Content-Type": "application/json"
       }
     })
@@ -26,7 +26,7 @@ export default class Playlists extends Component {
   renderPlaylists = () => {
     return this.state.playlists.map(playlist => {
       return (
-        <a href={playlist.external_urls.spotify}>
+        <a href={playlist.external_urls.spotify} key={playlist.id}>
           <div className="playlist" key={playlist.id}>
             <img src={playlist.images[0].url} />
             <h3>{playlist.name}</h3>
