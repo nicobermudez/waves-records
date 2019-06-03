@@ -6,7 +6,7 @@ export default class Playlists extends Component {
   }
 
   componentWillMount() {
-    let mood = "happy"
+    let mood = "hits"
     let url = "https://api.spotify.com/v1/search?q=" + mood + "&type=playlist&limit=9"
     fetch(url, {
       headers: {
@@ -26,13 +26,12 @@ export default class Playlists extends Component {
   renderPlaylists = () => {
     return this.state.playlists.map(playlist => {
       return (
+        <a href={playlist.external_urls.spotify}>
           <div className="playlist" key={playlist.id}>
-            <a href={playlist.external_urls.spotify}>
-              <img src={playlist.images[0].url} />
-              <h3>{playlist.name}</h3>
-            </a>
+            <img src={playlist.images[0].url} />
+            <h3>{playlist.name}</h3>
           </div>
-
+      </a>
       )
     })
   }
