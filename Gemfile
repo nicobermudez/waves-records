@@ -8,6 +8,8 @@ gem 'omniauth'
 gem 'omniauth-spotify'
 gem 'jwt'
 
+gem 'rack-cors'
+
 gem 'dotenv-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

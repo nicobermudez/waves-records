@@ -3,7 +3,6 @@ require 'pry'
 class PlaylistsController < ApplicationController
 
   def index
-    binding.pry
     render json: Playlist.all
   end
 

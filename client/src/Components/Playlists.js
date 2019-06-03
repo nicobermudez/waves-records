@@ -6,12 +6,10 @@ export default class Playlists extends Component {
   }
 
   componentWillMount() {
-    fetch('http://api.open-notify.org/astros.json')
+    fetch('http://localhost:3000/playlists')
       .then(response => response.json())
       .then(data => {
-        this.setState({
-          playlists: data.people
-        })
+        console.log(data)
       })
   }
 
