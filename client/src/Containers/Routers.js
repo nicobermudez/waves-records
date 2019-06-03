@@ -9,7 +9,7 @@ class Routers extends Component {
   render() {
     return (
       <Router>
-        <div class="Nav-bar">
+        <div className="Nav-bar">
           <Link to="/login">Log In</Link>
           <Link to="/analyze">Analyze</Link>
         </div>

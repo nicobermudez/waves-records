@@ -36,6 +36,19 @@
   color: #61dafb;
 }
 
+.login {
+  width: 400px;
+  background-color: #fff;
+  margin: 100px auto;
+}
+.uploadImage p {
+  color: #000;
+}
+.login-auth a {
+  text-decoration: none;
+  color: #000;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

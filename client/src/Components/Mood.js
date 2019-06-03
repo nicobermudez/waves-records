@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import fetch from 'isomorphic-fetch';
-
 export default class Mood extends Component {
 
   // analyzeImage = () => {
