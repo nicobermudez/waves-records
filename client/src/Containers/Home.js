@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Auth from '../Components/Auth'
+import Login from '../Components/Login'
 import Mood from '../Components/Mood'
-import Playlists from '../Components/Playlists'
+import PlaylistsContainer from './PlaylistsContainer'
 
 export default class Home extends Component {
 
@@ -16,10 +16,9 @@ export default class Home extends Component {
   render() {
     return (
       <>
-        {/*<Auth />*/}
         <section className="home">
           <Mood />
-          <Playlists />
+          <PlaylistsContainer />
         </section>
 
       </>

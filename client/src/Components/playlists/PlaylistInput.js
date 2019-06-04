@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import liked from '../assets/iconmonstr-favorite-3-240 (1).png'
-import not_liked from '../assets/iconmonstr-favorite-4-240.png'
+import liked from '../../assets/iconmonstr-favorite-3-240 (1).png'
+import not_liked from '../../assets/iconmonstr-favorite-4-240.png'
 
 export default class PlaylistInput extends Component {
   state = {

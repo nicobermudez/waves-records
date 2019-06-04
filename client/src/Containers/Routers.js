@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
-import Auth from '../Components/Auth'
+import Login from '../Components/Login'
 import Mood from '../Components/Mood'
 import waves from '../assets/waves.png'
 
