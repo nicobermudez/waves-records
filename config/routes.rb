@@ -4,7 +4,10 @@ Rails.application.routes.draw do
     resources :playlists
   end
 
-  #spotify authentication
-  get '/auth/login', to: 'auth#spotify_request'
-  get '/user', to: 'users#create'
+  #spotify auth
+  # get '/auth/login', to: 'auth#spotify_request'
+  # get '/user', to: 'users#create'
+
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 end
