@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+
 export default class Mood extends Component {
   state = {
     mood: "Happy"
@@ -12,6 +13,7 @@ export default class Mood extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
+    // event.target.value
   }
 
   render() {

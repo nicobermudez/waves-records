@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import PlaylistInput from './PlaylistInput'
+import { connect } from 'react-redux'
 
-export default class Playlists extends Component {
+class Playlists extends Component {
   state = {
     playlists: []
   }
@@ -11,7 +13,7 @@ export default class Playlists extends Component {
     fetch(url, {
       headers: {
         Accept: "application/json",
-        Authorization: "Bearer BQBQtGxw6888nwjQFAH66exeTgl5quqMBxA_I_gOJvbWwW4Qlvy2b5crISlq4U9sQjB5Z3NWCWXsreLAK0izEoS0I_4y3Ga8S7gIWWK6aPJiWPos5ZMwu7Vt2FOnCa7pGcHH37FU9gEhkIR9qiP9i1fuJ7kjVxuz",
+        Authorization: "Bearer BQCy52h7Psu7KiRoSuKJ6PZNG_39ZCx3FKeaDxVDqxENRIpXzW5cRQTKfph_kO2cf33UaCKViLkBz8L6prSuElgZrE6sxD533MVudeNjxTKqoyYFE28aV6lOKTVPcphjLcKLyVQIXtg3fi-vKYqv9-z6IWt0u_ul",
         "Content-Type": "application/json"
       }
     })
@@ -26,12 +28,15 @@ export default class Playlists extends Component {
   renderPlaylists = () => {
     return this.state.playlists.map(playlist => {
       return (
-        <a href={playlist.external_urls.spotify} key={playlist.id}>
           <div className="playlist" key={playlist.id}>
-            <img src={playlist.images[0].url} />
-            <h3>{playlist.name}</h3>
+            <a href={playlist.external_urls.spotify} key={playlist.id}>
+              <img src={playlist.images[0].url} />
+            </a>
+            <div className="save">
+              <h3>{playlist.name}</h3>
+              <PlaylistInput addPlaylist={this.props.addPlaylist}/>
+            </div>
           </div>
-      </a>
       )
     })
   }
@@ -47,6 +52,11 @@ export default class Playlists extends Component {
 
     )
   }
-
-
 }
+
+const mapStateToProps = state => ({ playlists: state.playlists })
+const mapDispatchToProps = dispatch => ({
+  addPlaylist: text => dispatch({type: 'ADD_PLAYLIST', text})
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Playlists)
