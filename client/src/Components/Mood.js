@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { fetchPlaylists } from '../actions/fetchPlaylists'
 
-export default class Mood extends Component {
+class Mood extends Component {
   state = {
-    mood: "Happy"
+    mood: ""
   }
 
   handleChange = event => {
@@ -13,23 +15,34 @@ export default class Mood extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    // event.target.value
+    // this.props.fetchPlaylists(this.state)
+    this.props.dispatch({type: 'ADD_MOOD', payload: this.state})
+    this.setState({
+      mood: ""
+    })
   }
 
   render() {
+
     return (
       <div className="mood">
         <form onSubmit={event => this.handleSubmit(event)}>
           <input
             type="text"
             name="mood"
+            className="input"
             id="mood"
             value={this.state.mood}
-            onChange={this.handleMoodChange}
+            onChange={this.handleChange}
+          />
+          <input
+            className="submit"
+            type="submit"
           />
         </form>
       </div>
-
     )
   }
 }
+
+export default connect()(Mood)

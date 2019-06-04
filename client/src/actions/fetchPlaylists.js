@@ -1,21 +1,15 @@
-export function fetchPlaylists() {
-  return(dispatch) => {
-    dispatch({
-      type: 'LOAD_PLAYLISTS'
-    })
-
-    let mood = "hits"
+export function fetchPlaylists(mood) {
     let url = "https://api.spotify.com/v1/search?q=" + mood + "&type=playlist&limit=9"
-    return fetch(url, {
+    const playlists = fetch(url, {
           headers: {
             Accept: "application/json",
-            Authorization: "Bearer BQCy52h7Psu7KiRoSuKJ6PZNG_39ZCx3FKeaDxVDqxENRIpXzW5cRQTKfph_kO2cf33UaCKViLkBz8L6prSuElgZrE6sxD533MVudeNjxTKqoyYFE28aV6lOKTVPcphjLcKLyVQIXtg3fi-vKYqv9-z6IWt0u_ul",
+            Authorization: "Bearer BQDpgqw693v720JfclJOF5_fsegiTl4N5hUGqDjqBOce88JbJuSfLU0HCTLwKqLZjxEMoHJEu0Q4RbenWqqbf5T5mtOmAaqp5bs4qLDBw9FD0AuRizvHiSupeJunHoGUE27v3D3GXtaevdM6ufjqqxgsMTkRqsPq",
             "Content-Type": "application/json"
           }
         })
           .then(response => response.json())
-          .then(data => {dispatch({
-            type: 'FETCH_PLAYLISTS', playlists
-          })})
-  }
+      return {
+        type: 'FETCH_PLAYLISTS',
+        playlists
+      }
 }

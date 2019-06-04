@@ -4,6 +4,10 @@ import Playlists from '../Components/playlists/Playlists'
 import { connect } from 'react-redux'
 
 class PlaylistsContainer extends Component {
+  state = {
+    playlists: []
+  }
+
   render() {
     return (
       <Playlists
@@ -13,9 +17,9 @@ class PlaylistsContainer extends Component {
   }
 }
 
-const mapStateToProps = state => ({ playlists: state.playlists })
-const mapDispatchToProps = dispatch => ({
-  addPlaylist: text => dispatch({type: 'ADD_PLAYLIST', text})
-})
+// const mapStateToProps = state => ({ playlists: state.playlists })
+// const mapDispatchToProps = dispatch => ({
+//   addPlaylist: text => dispatch({type: 'ADD_PLAYLIST', text})
+// })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Playlists)
+export default connect()(PlaylistsContainer)
