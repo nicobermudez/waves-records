@@ -7,7 +7,7 @@ import LandingPage from './Containers/LandingPage'
 
 function App() {
   // if user is logged in, show home, else landing page
-  if(false) {
+  if(true) {
     return (
       <div className="App">
         <header className="App-header">

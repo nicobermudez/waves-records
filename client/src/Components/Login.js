@@ -8,31 +8,29 @@ class Login extends Component  {
   }
 
   handleChange = event => {
-    event.preventDefault()
-    // window.location.href = "http://localhost:3000/auth/login"
+    window.location = "http://localhost:3000/auth/login"
     // Now I need to authenticate user and if valid send the user back
     // with that response, set the state
 
-    const user = this.state.currentUser
-    const headers = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify()
-    }
-
-    fetch("http://localhost:3000/login", headers)
-      .then(response => response.json())
-      .then(data => {
-        if(data.error) {
-          alert("Invalid Credentials")
-        } else {
-          this.setState({
-            currentUser: data
-          })
-        }
-      })
+    // const user = this.state.currentUser
+    // const headers = {
+    //   method: "POST",
+    //   headers: {
+    //     "Access-Control-Allow-Origin": "*",
+    //     "Content-Type": "application/json"
+    //   },
+    //   body: JSON.stringify()
+    // }
+    //
+    // fetch("http://localhost:3000/login", headers)
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     if(data.error) {
+    //       alert("Invalid Credentials")
+    //     } else {
+    //         console.log("Hello")
+    //     }
+    //   })
   }
 
   render() {

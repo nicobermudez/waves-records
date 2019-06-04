@@ -1,24 +1,16 @@
 import React, { Component } from 'react'
-import Login from '../Components/Login'
 import Mood from '../Components/Mood'
-import PlaylistsContainer from './PlaylistsContainer'
+import Featured from '../Components/Featured'
 
 export default class Home extends Component {
-
-  // componentDidMount = () => {
-  //   this.fetchUser()
-  // }
-  //
-  // fetchUser = () => {
-  //
-  // }
 
   render() {
     return (
       <>
         <section className="home">
+          <h1>Featured</h1>
           <Mood />
-          <PlaylistsContainer />
+          <Featured />
         </section>
 
       </>
