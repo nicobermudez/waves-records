@@ -12,7 +12,13 @@ class App extends Component {
   // }
 
   loggedIn = () => {
-    console.log(localStorage)
+
+  }
+
+  componentDidMount() {
+    let url = "http://localhost:3000/user"
+    fetch(url)
+      .then(response => console.log(response.json()))
   }
 
   render() {
