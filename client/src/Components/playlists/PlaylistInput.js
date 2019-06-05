@@ -12,7 +12,6 @@ export default class PlaylistInput extends Component {
       this.setState({
         favorite: true
       })
-      console.log(event.target)
       // this.props.dispatch({type: 'ADD_PLAYLIST', payload: event.target})
     } else {
       this.setState({

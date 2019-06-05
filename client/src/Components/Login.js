@@ -7,8 +7,8 @@ class Login extends Component  {
     currentUser: null
   }
 
-  handleChange = event => {
-    window.location = "http://localhost:3000/auth/login"
+  handleClick = event => {
+    window.location = "http://localhost:3000/api/auth/login"
     // Now I need to authenticate user and if valid send the user back
     // with that response, set the state
 
@@ -38,7 +38,7 @@ class Login extends Component  {
       <div className="login-auth">
         <input
           type="image"
-          onClick={this.handleChange}
+          onClick={this.handleClick}
           src={spotify_login}
         />
       </div>

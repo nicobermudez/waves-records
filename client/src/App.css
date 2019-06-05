@@ -9,17 +9,17 @@
 /* Landing Page */
 .landing-page {
   text-align: center;
-  padding-top: 10%;
+  margin-top: 5%;
 }
 .landing-page h1 {
   margin: 0;
 }
 .logo img {
-  width: 200px;
+  width: 150px;
   top: 0;
   left: 0;
-  margin-left: 40px;
-  margin-top: 40px;
+  padding-left: 60px;
+  padding-top: 60px;
 }
 .landing-page p {
   margin-top: 20px;

@@ -1,17 +1,17 @@
 import React from 'react';
 import './App.css';
-import Routers from './Containers/Routers'
+import NavBar from './Containers/NavBar'
 import Home from './Containers/Home'
 import LandingPage from './Containers/LandingPage'
 
 
 function App() {
   // if user is logged in, show home, else landing page
-  if(true) {
+  if(false) {
     return (
       <div className="App">
         <header className="App-header">
-          <Routers />
+          <NavBar />
         </header>
         <Home />
       </div>
