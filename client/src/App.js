@@ -3,6 +3,9 @@ import './App.css';
 import NavBar from './Containers/NavBar'
 import Home from './Containers/Home'
 import LandingPage from './Containers/LandingPage'
+import LoginUser from './actions/loginUser';
+
+import { connect } from 'react-redux'
 
 
 class App extends Component {
@@ -11,19 +14,28 @@ class App extends Component {
   //   this.props.fetchCurrentUser();
   // }
 
-  loggedIn = () => {
-
+  componentWillMount() {
+    // let url = "http://localhost:3000/api/users"
+    // fetch(url)
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     console.log(data)
+    //   })
+    LoginUser(window.location)
   }
 
-  componentDidMount() {
-    let url = "http://localhost:3000/user"
-    fetch(url)
-      .then(response => console.log(response.json()))
+  setCurrentUser = () => {
+    console.log(localStorage)
+    if(localStorage.getItem('jwt')) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   render() {
       // if user is logged in, show home, else landing page
-      if(!this.loggedIn()) {
+      if(this.setCurrentUser()) {
         return (
           <div className="App">
             <NavBar />
@@ -39,5 +51,11 @@ class App extends Component {
 
   }
 }
+
+// const mapStateToProps = state => {
+//   return {
+//     currentUser: state.currentUser.user
+//   }
+// }
 
 export default App;

@@ -1,4 +1,4 @@
-analyzeImage = () => {
+export const fetchMood = () => {
   const image='https://www.bolde.com/wp-content/uploads/2018/09/iStock-918377480-400x400.jpg'
 
   const api_key = 'api_key=ZksgXAn3YithLhxw5Ia_FlszlpNZRGRN'
@@ -20,4 +20,4 @@ analyzeImage = () => {
 
     // reroute to playlists
 }
-<button onClick={this.analyzeImage}>Upload Image</button>
+// <button onClick={this.analyzeImage}>Upload Image</button>

@@ -12,7 +12,7 @@ export default class Featured extends Component {
     fetch(url, {
           headers: {
             Accept: "application/json",
-            Authorization: "Bearer BQAwxft_BXNztTtbD25yK94acHGUdUj71TL34qz_C7of2-dHLgLZePpEmOW9ZruABeYid_F6Ls9ZSnr-K2Iez7EQ0Z7iSWSd_HH9xjlZ5Dc2ibvt_aTd1rz6D2kYwpze32hosrRTJz_5L3k-XV4jgGG3Z_IJO4AW",
+            Authorization: "Bearer BQACOB_Y0pOz9eYd-x8xb5IjZxaDj11RbC1z4_fGWkFGDY9EKp_dufL7vds5VbLnoYI9qwbB-k1KjgX0EfR0kYcQ1gg6BLauxd-C0p4RTqPVBC8E64fatuDSJAh31cCMDqgf6uj3IvM52xvnchUs99xafm3mjnl2",
             "Content-Type": "application/json"
           }
         })
