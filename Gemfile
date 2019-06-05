@@ -8,6 +8,8 @@ gem 'omniauth'
 gem 'omniauth-spotify'
 gem 'jwt'
 
+gem 'rest-client'
+
 gem 'rack-cors'
 
 gem 'dotenv-rails'
