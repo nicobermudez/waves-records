@@ -1,29 +1,30 @@
-import { currentUser } from './currentUser';
+import { setCurrentUser } from './currentUser';
 
-const LoginUser = (windowLocation) => {
+const LogInUser = (windowLocation) => {
+  return (dispatch) => {
     const query = windowLocation.search.substring(1);
-    if(query !== "") {
-      const queryPairs = query.split("&")
+    if (query !== ""){
+      const queryPairs = query.split('&');
 
-
-      let queryObject={}
-      queryPairs.forEach(item => {
-        let pair = item.split("=")
-        queryObject[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
-      })
-
-
-      // deconstruct
-      const userObject = {
-        name: queryObject.name,
-        image: queryObject.image,
-        access_token: queryObject.token
+      let queryObj ={};
+      for (var i = 0; i < queryPairs.length; i++) {
+          var pair = queryPairs[i].split('=');
+          queryObj[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
       }
 
-      // dispatch(currentUser(userObject))
+      const userObj = {
+          name: queryObj.name.split("+").join(" "),
+          image: queryObj.image,
+          access_token: queryObj.token
+        }
 
-      const jwt = queryObject.jwt
+      dispatch(setCurrentUser(userObj));
+
+      const jwt = queryObj.jwt
+
       localStorage.setItem('jwt', jwt)
     }
   }
-export default LoginUser;
+};
+
+export default LogInUser

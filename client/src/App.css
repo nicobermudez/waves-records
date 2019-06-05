@@ -35,7 +35,7 @@
 /* Nav */
 .App-header {
   background-color: rgb(10, 10, 10);
-  width: 10%;
+  width: 150px;
   height: 100vh;
   top: 0;
   left: 0;
@@ -43,14 +43,14 @@
   padding: 40px;
 }
 .App-header img {
-  width: 90%;
+  width: 150px;
   top: 0;
 }
 .Nav-bar {
   bottom: 0;
   position: fixed;
-  width: 200px%;
   margin-bottom: 40px;
+  display: grid;
 }
 .Nav-bar a {
   display: block;
@@ -58,16 +58,30 @@
   color: #fff;
   font-size: 16px;
   font-weight: 600;
-  width: 70px;
 }
 .Nav-bar img{
   width: 20px;
   padding-right: 15px;
 }
 .link {
+  width: 150px;
+  padding: 20px 0;
+  display: -webkit-inline-box;
+}
+.profile-link {
   width: 100%;
   padding: 20px 0;
   display: -webkit-inline-box;
+  border-radius: 100%;
+}
+.profile-image img{
+  width: 50%;
+  border-radius: 100%;
+  padding: 20px 0px;
+}
+.profile-image {
+  width: 150px;
+  text-align: left;
 }
 .home {
   text-align: center;

@@ -7,7 +7,7 @@ import waves from '../assets/waves.png'
 import home from '../assets/iconmonstr-home-1-240.png'
 import logout from '../assets/iconmonstr-log-out-9-240.png'
 import playlists from '../assets/iconmonstr-equalizer-1-240.png'
-
+import link from '../assets/iconmonstr-share-9-240.png'
 
 class NavBar extends Component {
 
@@ -24,7 +24,13 @@ class NavBar extends Component {
             <img src={playlists}/><Link to="/playlists">Playlists</Link>
           </div>
           <div className="link">
+            <img src={link}/><Link to="https://open.spotify.com/browse/featured">Spotify</Link>
+          </div>
+          <div className="link">
             <img src={logout}/><Link to="/logout">Log Out</Link>
+          </div>
+          <div className="profile-image">
+            <img src={this.props.currentUser.image}/>
           </div>
         </div>
       </header>
@@ -35,6 +41,6 @@ class NavBar extends Component {
       </Router>
     )
   }
-
 }
+
  export default NavBar

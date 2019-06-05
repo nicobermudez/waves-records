@@ -1,6 +1,8 @@
-export const currentUser = (payload) => {
+export const setCurrentUser = (user) => {
   return {
     type: 'SET_CURRENT_USER',
-    payload: payload
+    user
   };
 };
+
+export default setCurrentUser;

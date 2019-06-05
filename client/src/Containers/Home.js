@@ -4,6 +4,10 @@ import Featured from '../Components/Featured'
 
 export default class Home extends Component {
 
+  componentDidMount() {
+    const { currentUser } = this.props;
+  }
+
   render() {
     return (
       <>
@@ -12,11 +16,7 @@ export default class Home extends Component {
           <Mood />
           <Featured />
         </section>
-
       </>
-
-
-
     )
   }
 }
