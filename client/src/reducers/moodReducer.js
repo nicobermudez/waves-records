@@ -1,5 +1,5 @@
 export default function moodReducer (state= {
-  mood: "",
+  mood: "Happy",
 }, action) {
   switch(action.type) {
     case 'CHANGE_MOOD':

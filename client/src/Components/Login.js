@@ -3,10 +3,6 @@ import spotify_login from '../assets/spotify_login.png'
 
 class Login extends Component  {
 
-  state = {
-    currentUser: null
-  }
-
   handleClick = event => {
     window.location = "http://localhost:3000/api/auth/login"
     // Now I need to authenticate user and if valid send the user back

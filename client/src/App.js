@@ -37,7 +37,7 @@ class App extends Component {
 
   render() {
       // if user is logged in, show home, else landing page
-      if(this.props.currentUser) {
+      if(true) {
         return (
           <div className="App">
             <NavBar currentUser={this.props.currentUser}/>
