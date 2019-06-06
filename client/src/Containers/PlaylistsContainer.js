@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Playlists from '../Components/playlists/Playlists'
-import Mood from '../Components/Mood'
 
 export default class PlaylistsContainer extends Component {
 

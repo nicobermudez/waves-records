@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class Mood extends Component {
+export default class Mood extends Component {
 
   render() {
     return (
@@ -23,6 +23,3 @@ class Mood extends Component {
     )
   }
 }
-
-
-export default Mood

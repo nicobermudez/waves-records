@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Login from '../Components/Login'
+import Login from '../Components/auth/Login'
 import waves from '../assets/waves.png'
 
 export default class LandingPage extends Component {

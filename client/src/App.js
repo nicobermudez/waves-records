@@ -36,7 +36,8 @@ class App extends Component {
   // }
 
   render() {
-      // if user is logged in, show home, else landing page
+      // if user is logged in, show home, else direct to landing page
+      // Object.entries(this.props.currentUser).length != 0
       if(true) {
         return (
           <div className="App">

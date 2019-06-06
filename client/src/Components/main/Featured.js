@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import PlaylistInput from './playlists/PlaylistInput'
-import fetchPlaylists from '../actions/fetchPlaylists'
+import PlaylistInput from '../playlists/PlaylistInput'
+import fetchPlaylists from '../../actions/fetchPlaylists'
 import { connect } from 'react-redux'
-import store from '../store'
+import store from '../../store'
 
 export default class Featured extends Component {
 

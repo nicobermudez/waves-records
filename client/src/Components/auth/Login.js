@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import spotify_login from '../assets/spotify_login.png'
+import spotify_login from '../../assets/spotify_login.png'
 
 class Login extends Component  {
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Mood from '../Components/Mood'
-import Featured from '../Components/Featured'
+import Mood from '../Components/main/Mood'
+import Featured from '../Components/main/Featured'
 import { connect } from 'react-redux'
 import { fetchPlaylists } from '../actions/fetchPlaylists'
 import { changeMood } from '../actions/changeMood'
