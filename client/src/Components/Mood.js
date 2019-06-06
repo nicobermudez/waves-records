@@ -1,29 +1,30 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchPlaylists } from '../actions/fetchPlaylists'
+import store from '../store'
+import { Redirect } from 'react-router-dom'
 
 class Mood extends Component {
   state = {
-    mood: ""
+    mood: "",
+    playlists: []
   }
 
   handleChange = event => {
     this.setState({
-      [event.target.name]: event.target.value
+      mood: event.target.value
     })
   }
 
   handleSubmit = event => {
     event.preventDefault()
-    // this.props.fetchPlaylists(this.state)
-    this.props.dispatch({type: 'ADD_MOOD', payload: this.state})
+    this.props.fetchPlaylists(this.state, store.getState().currentUser.user.access_token)
     this.setState({
       mood: ""
     })
   }
 
   render() {
-
     return (
       <div className="mood">
         <form onSubmit={event => this.handleSubmit(event)}>
@@ -45,4 +46,11 @@ class Mood extends Component {
   }
 }
 
-export default connect()(Mood)
+const mapStateToProps = state => {
+  return {
+    mood: state.mood,
+    playlists: state.playlists
+  }
+}
+
+export default connect(mapStateToProps, { fetchPlaylists })(Mood)

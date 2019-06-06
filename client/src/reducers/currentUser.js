@@ -8,6 +8,7 @@ const defaultState = {
 
 export default (state=defaultState, action) => {
   switch (action.type) {
+    
     case 'SET_CURRENT_USER':
       return {...state, user: action.user, loggedIn: true}
     default:

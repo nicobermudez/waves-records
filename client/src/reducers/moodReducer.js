@@ -2,7 +2,7 @@ export default function moodReducer (state= {
   mood: "",
 }, action) {
   switch(action.type) {
-    case 'ADD_MOOD':
+    case 'CHANGE_MOOD':
       return { mood: action.payload.mood }
 
     default:

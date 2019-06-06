@@ -2,13 +2,7 @@ import React, { Component } from 'react'
 import Mood from '../Components/Mood'
 import Featured from '../Components/Featured'
 
-export default class Home extends Component {
-
-  componentDidMount() {
-    const { currentUser } = this.props;
-  }
-
-  render() {
+export default function Home() {
     return (
       <>
         <section className="home">
@@ -18,5 +12,4 @@ export default class Home extends Component {
         </section>
       </>
     )
-  }
 }

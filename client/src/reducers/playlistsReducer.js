@@ -4,7 +4,7 @@ export default function playlistsReducer(state = {
   switch(action.type) {
 
     case 'FETCH_PLAYLISTS':
-      return action.playlists
+      return { playlists: action.payload.playlists.items }
 
     default:
       return state;

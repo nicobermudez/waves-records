@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import PlaylistInput from '../Components/playlists/PlaylistInput'
 import Playlists from '../Components/playlists/Playlists'
+import Mood from '../Components/Mood'
 import { connect } from 'react-redux'
 
 class PlaylistsContainer extends Component {
@@ -10,11 +10,13 @@ class PlaylistsContainer extends Component {
 
   render() {
     return (
-      <Playlists
-        playlists={this.props.playlists}
-      />
-    )
-  }
+      <section className="playlistsContainer">
+        
+        <Playlists
+          playlists={this.props.playlists}
+        />
+      </section>
+  )}
 }
 
 // const mapStateToProps = state => ({ playlists: state.playlists })
