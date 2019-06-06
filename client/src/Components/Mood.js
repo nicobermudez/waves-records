@@ -5,14 +5,14 @@ class Mood extends Component {
   render() {
     return (
       <div className="mood">
-        <form onSubmit={event => this.props.handleSubmit(event)}>
+        <form onSubmit={event => this.props.handleMoodSubmit(event)}>
           <input
             type="text"
             name="mood"
             className="input"
             id="mood"
             value={this.props.mood}
-            onChange={event => this.props.handleChange(event)}
+            onChange={event => this.props.handleMoodChange(event)}
           />
           <input
             className="submit"

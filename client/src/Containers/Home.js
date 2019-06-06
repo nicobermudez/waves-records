@@ -3,42 +3,21 @@ import Mood from '../Components/Mood'
 import Featured from '../Components/Featured'
 import { connect } from 'react-redux'
 import { fetchPlaylists } from '../actions/fetchPlaylists'
-import store from '../store'
+import { changeMood } from '../actions/changeMood'
 
 class Home extends Component {
 
-  // state = {
-  //   user: store.getState().currentUser.user,
-  //   mood: "Happy",
-  //   playlists: this.props.playlistsReducer
-  // }
-
   fetchPlaylistsFromHome = () => {
-    // if(this.state.mood == "") {
-    //   this.setState({
-    //     mood: "Happy"
-    //   })
-    // }
     this.props.fetchPlaylists(this.props.mood, this.props.user.access_token)
   }
 
   handleMoodChange = event => {
-    if(event) {
-      this.setState({
-        mood: event.target.value
-      })
-    }
+    this.props.changeMood(event.target.value)
   }
 
   handleMoodSubmit = event => {
-
-    if(event) {
       event.preventDefault()
       this.fetchPlaylistsFromHome()
-      this.setState({
-        mood: ""
-      })
-    }
   }
 
   componentDidMount() {
@@ -62,7 +41,6 @@ class Home extends Component {
           />
 
           <Featured
-            fetchPlaylistsFromHome={this.fetchPlaylistsFromHome()}
             playlists={this.props.playlists}
             mood={this.props.mood}
           />
@@ -80,4 +58,6 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { fetchPlaylists })(Home)
+// const mapDispatchToProps = dispatch => {}
+
+export default connect(mapStateToProps, { fetchPlaylists, changeMood })(Home)

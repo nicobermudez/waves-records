@@ -8,7 +8,7 @@
 
 export default function currentUser (state={
   user: {}
-}, action){
+}, action) {
   switch (action.type) {
 
     case 'SET_CURRENT_USER':
