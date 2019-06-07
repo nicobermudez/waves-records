@@ -1,17 +1,23 @@
 require 'pry'
 
 class Api::PlaylistsController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
   def index
-    if logged_in?
-      @playlists = active_user.playlists
-      render json: @playlists
-    end
+    @playlists = Playlist.all
+    render json: @playlists
   end
 
-  def show
-    @playlist = Playlist.find(params[:id])
-    render json: @playlist
+  def create
+    if logged_in?
+      @user = active_user
+      @playlist = Playlist.find_or_create_by(playlist_params)
+      @user.playlists << @playlist if !@user.playlists.include?(@playlist)
+      @playlists = @user.playlists
+      render json: @playlists
+    else
+      render json: {error: "You do not have permission to add a new playlist"}
+    end
   end
 
   private

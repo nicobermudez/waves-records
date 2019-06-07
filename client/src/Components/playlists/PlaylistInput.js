@@ -12,7 +12,7 @@ export default class PlaylistInput extends Component {
       this.setState({
         favorite: true
       })
-      // this.props.dispatch({type: 'ADD_PLAYLIST', payload: event.target})
+      this.props.addPlaylist(this.props.playlist)
     } else {
       this.setState({
         favorite: false

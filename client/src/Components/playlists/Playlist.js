@@ -5,6 +5,7 @@ export default class Playlist extends Component {
 
   render() {
     const { playlist } = this.props
+    debugger
     return (
       <div className="playlist" key={playlist.id}>
         <a href={playlist.external_urls.spotify} key={playlist.id}>

@@ -3,6 +3,7 @@ import Mood from '../Components/main/Mood'
 import Featured from '../Components/main/Featured'
 import { connect } from 'react-redux'
 import { fetchPlaylists } from '../actions/fetchPlaylists'
+import { addUserPlaylist } from '../actions/addUserPlaylist'
 import { changeMood } from '../actions/changeMood'
 
 class Home extends Component {
@@ -42,6 +43,7 @@ class Home extends Component {
           <Featured
             playlists={this.props.playlists}
             mood={this.props.mood}
+            addPlaylist={this.props.addUserPlaylist}
           />
         </section>
       </>
@@ -61,4 +63,4 @@ const mapStateToProps = state => {
 
 // const mapDispatchToProps = dispatch => {}
 
-export default connect(mapStateToProps, { fetchPlaylists, changeMood })(Home)
+export default connect(mapStateToProps, { fetchPlaylists, changeMood, addUserPlaylist })(Home)

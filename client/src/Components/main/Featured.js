@@ -14,7 +14,10 @@ export default class Featured extends Component {
             </a>
             <div className="save">
               <h3>{playlist.name}</h3>
-              <PlaylistInput addPlaylist={this.props.addPlaylist}/>
+              <PlaylistInput
+                addPlaylist={this.props.addPlaylist}
+                playlist={playlist}
+              />
             </div>
           </div>
         )}

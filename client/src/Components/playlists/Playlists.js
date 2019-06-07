@@ -17,6 +17,7 @@ export default class Playlists extends Component {
         <Playlist
           key={playlist.id}
           playlist={playlist}
+          addPlaylist={this.props.addPlaylists}
         />
       )
     });

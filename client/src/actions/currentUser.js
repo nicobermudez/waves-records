@@ -1,7 +1,6 @@
 export const currentUser = (user) => {
-  return {
-    type: 'SET_CURRENT_USER',
-    user
+  return (dispatch) => {
+    dispatch({type: 'SET_CURRENT_USER', user})
   };
 };
 

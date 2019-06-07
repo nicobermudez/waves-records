@@ -5,9 +5,9 @@ class Api::SessionsController < ApplicationController
 
   def create
     if params[:error]
-      binding.pry
-
+      render json: {error: "Invalid credentials"}
     else
+      
       # Authorize user from Spotify and store session
       body = {
         grant_type: "authorization_code",
