@@ -3,8 +3,10 @@ require 'pry'
 class Api::PlaylistsController < ApplicationController
 
   def index
-    @playlists = Playlist.all
-    render json: @playlists
+    if logged_in?
+      @playlists = active_user.playlists
+      render json: @playlists
+    end
   end
 
   def show

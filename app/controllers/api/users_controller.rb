@@ -2,21 +2,13 @@ require 'pry'
 class Api::UsersController < ApplicationController
 
   def index
-      render json: User.all
+      render json: @user
   end
-
-  def show
-    render json: User.find(params[:id])
-  end
-
-  # def authenticate
-  #   redirect_to 'auth/spotify' if params[:type] == 'spotify'
-  # end
 
   private
 
   def user_params
-    params.require(:playlist).permit(
+    params.require(:user).permit(
       :name,
       :spotify_url,
       :spotify_id,

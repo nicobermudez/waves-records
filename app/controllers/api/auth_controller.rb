@@ -1,8 +1,9 @@
-require 'pry'
 class Api::AuthController < ApplicationController
+  include HTTParty
 
     def spotify_request
       url = "https://accounts.spotify.com/authorize"
+
       query_params = {
         client_id: ENV['SPOTIFY_ID'],
         response_type: 'code',
@@ -16,6 +17,7 @@ class Api::AuthController < ApplicationController
         playlist-modify-public",
         show_dialog: true
       }
+
       redirect_to "#{url}?#{query_params.to_query}"
     end
 end

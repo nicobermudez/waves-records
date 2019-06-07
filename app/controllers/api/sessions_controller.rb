@@ -2,14 +2,13 @@ require 'pry'
 require 'rest-client'
 
 class Api::SessionsController < ApplicationController
-  # skip_before_action :authorized, only: [:create]
 
   def create
     if params[:error]
       binding.pry
 
     else
-      # Authorize user from Spotify and store JWT Token
+      # Authorize user from Spotify and store session
       body = {
         grant_type: "authorization_code",
         code: params[:code],
@@ -33,27 +32,25 @@ class Api::SessionsController < ApplicationController
       end
       @user.update(access_token: auth_params["access_token"], refresh_token: auth_params["refresh_token"])
     end
-    token = encode_token(id: @user.id)
 
-    response_query_params = {
-      jwt: token,
-      name: @user.name,
-      image: @user.image,
-      spotify_url: @user.spotify_url,
-      token: @user.access_token
-    }
-
-    url = "http://localhost:3001/"
-
-    redirect_to "#{url}?#{response_query_params.to_query}"
+    session[:user_id] = @user.id
+    redirect_to "http://localhost:3001"
   end
 
-  def delete
+  def destroy
+    session.clear
+    redirect_to "http://localhost:3001"
   end
 
-  # ???
-  # def logged_in
-  #   active_user ? (render json: UserSerializer.new(active_user), status: 200) : (render json: {message: "User not found"}, status: 404)
-  # end
+
+  def get_current_user
+    if logged_in?
+      render json: {
+        user: UserSerializer.new(active_user)
+      }, status: :ok
+    else
+      render json: {error: "No current user"}
+    end
+  end
 
 end
