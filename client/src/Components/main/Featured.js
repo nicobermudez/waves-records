@@ -10,7 +10,7 @@ export default class Featured extends Component {
         {this.props.playlists.map(playlist =>
           <div className="playlist" key={playlist.id}>
             <a href={playlist.external_urls.spotify} key={playlist.id}>
-              <img src={playlist.images[0].url} />
+              <img src={playlist.images[0].url} alt="" />
             </a>
             <div className="save">
               <h3>{playlist.name}</h3>

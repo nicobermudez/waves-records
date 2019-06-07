@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Playlist from './Playlist'
-import { connect } from 'react-redux'
 
 export default class Playlists extends Component {
 
@@ -17,7 +16,7 @@ export default class Playlists extends Component {
           <Playlist
             key={playlist.id}
             playlist={playlist}
-            addPlaylist={this.props.addPlaylists}
+            addPlaylist={this.props.addPlaylist}
           />
         )
       });

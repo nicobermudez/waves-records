@@ -13,7 +13,7 @@ componentWillMount() {
 }
 
 active_user = () => {
-  if(Object.entries(this.props.currentUser).length != 0) {
+  if(Object.entries(this.props.currentUser).length !== 0) {
     return true
   }  else {
     return false

@@ -14,6 +14,7 @@ class Login extends Component  {
           type="image"
           onClick={this.handleClick}
           src={spotify_login}
+          alt="Login with Spotify"
         />
       </div>
     )

@@ -15,22 +15,22 @@ class NavBar extends Component {
     return (
       <Router>
       <header className="App-header">
-        <img src={waves} />
+        <img src={waves} alt="Waves"/>
         <div className="Nav-bar">
           <div className="link">
-            <img src={home}/><Link to="/">Home</Link>
+            <img src={home} alt="" /><Link to="/">Home</Link>
           </div>
           <div className="link">
-            <img src={playlists}/><Link to="/playlists">Playlists</Link>
+            <img src={playlists} alt=""/><Link to="/playlists">Playlists</Link>
           </div>
           <div className="link">
-            <img src={link}/><Link to="https://open.spotify.com/browse/featured">Spotify</Link>
+            <img src={link} alt=""/><Link to="https://open.spotify.com/browse/featured">Spotify</Link>
           </div>
           <div className="link">
-            <img src={logout}/><Link to="/logout">Log Out</Link>
+            <img src={logout} alt=""/><Link to="/logout">Log Out</Link>
           </div>
           <div className="profile-image">
-            <img src={this.props.currentUser.user.image}/>
+            <img src={this.props.currentUser.user.image} alt=""/>
           </div>
         </div>
       </header>

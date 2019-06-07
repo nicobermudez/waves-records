@@ -8,7 +8,8 @@ export default class PlaylistInput extends Component {
   }
 
   handleOnChange(event) {
-    if (this.state.favorite == false) {
+
+    if (this.state.favorite === false) {
       this.setState({
         favorite: true
       })
@@ -21,13 +22,14 @@ export default class PlaylistInput extends Component {
   }
 
   render() {
-    if(this.state.favorite == false) {
+    if(this.state.favorite === false) {
       return (
         <div className="liked">
           <input
             type="image"
             onClick={(event) => this.handleOnChange(event)}
             src={not_liked}
+            alt="Like"
           />
         </div>
       )
@@ -38,6 +40,7 @@ export default class PlaylistInput extends Component {
             type="image"
             onClick={(event) => this.handleOnChange(event)}
             src={liked}
+            alt="Like"
           />
         </div>
       )

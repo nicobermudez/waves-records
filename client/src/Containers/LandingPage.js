@@ -8,7 +8,7 @@ export default class LandingPage extends Component {
     return (
       <>
         <div className="logo">
-          <img src={waves}/>
+          <img src={waves} alt="Waves"/>
         </div>
         <section className="landing-page">
           <h1>Curate Spotify playlists based on your current mood</h1>
