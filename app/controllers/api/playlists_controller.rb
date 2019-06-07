@@ -4,19 +4,23 @@ class Api::PlaylistsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    @playlists = Playlist.all
-    render json: @playlists
-  end
-
-  def create
     if logged_in?
       @user = active_user
-      @playlist = Playlist.find_or_create_by(playlist_params)
-      @user.playlists << @playlist if !@user.playlists.include?(@playlist)
       @playlists = @user.playlists
       render json: @playlists
     else
-      render json: {error: "You do not have permission to add a new playlist"}
+      render json: {error: "Invalid request"}
+    end
+  end
+
+  def create
+    @playlist = Playlist.find_or_create_by(playlist_params)
+    @user = active_user
+    if logged_in? && !@user.playlists.include?(@playlist)
+      @user.playlists << @playlist
+      render json: @playlist
+    else
+      render json: {error: "Invalid attempt to add playlist"}
     end
   end
 
