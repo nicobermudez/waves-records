@@ -1,44 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
 import NavBar from './Containers/NavBar'
-import Home from './Containers/Home'
 import LandingPage from './Containers/LandingPage'
-import LogInUser from './actions/loginUser';
-import setCurrentUser from './actions/currentUser'
+import fetchCurrentUser from './actions/fetchCurrentUser'
 import { connect } from 'react-redux'
 
 
 class App extends Component {
 
-  // componentDidMount() {
-  //   this.props.fetchCurrentUser();
-  // }
-
-  componentWillMount() {
-    // let url = "http://localhost:3000/api/users"
-    // fetch(url)
-    //   .then(response => response.json())
-    //   .then(data => {
-    //     console.log(data)
-    //   })
-
-    // insecure solution to get from url query
-    this.props.LogInUser(window.location)
-  }
-
-  // temporary solution -> should be a state
-  // setCurrentUser = () => {
-  //   if(localStorage.getItem('jwt')) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }
+componentWillMount() {
+    this.props.fetchCurrentUser();
+}
 
   render() {
       // if user is logged in, show home, else direct to landing page
-      // Object.entries(this.props.currentUser).length != 0
-      if(true) {
+      if(Object.entries(this.props.currentUser).length != 0) {
         return (
           <div className="App">
             <NavBar currentUser={this.props.currentUser}/>
@@ -61,4 +37,4 @@ const mapStateToProps = state => {
 }
 
 
-export default connect(mapStateToProps, { LogInUser })(App);
+export default connect(mapStateToProps, { fetchCurrentUser })(App);

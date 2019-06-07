@@ -30,7 +30,7 @@ class NavBar extends Component {
             <img src={logout}/><Link to="/logout">Log Out</Link>
           </div>
           <div className="profile-image">
-            <img src={this.props.currentUser.image}/>
+            <img src={this.props.currentUser.user.image}/>
           </div>
         </div>
       </header>

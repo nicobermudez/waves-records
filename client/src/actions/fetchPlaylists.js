@@ -1,5 +1,5 @@
 export function fetchPlaylists(mood, token) {
-  
+
     let url = "https://api.spotify.com/v1/search?q=" + mood + "&type=playlist&limit=9"
     return (dispatch) => {
       dispatch({ type: "LOAD_PLAYLISTS" });

@@ -1,12 +1,10 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
-import usersReducer from './reducers/usersReducer';
 import moodReducer from './reducers/moodReducer';
 import playlistsReducer from './reducers/playlistsReducer'
 import currentUser from './reducers/currentUser'
 import thunk from 'redux-thunk';
 
 const reducer = combineReducers({
-  users: usersReducer,
   mood: moodReducer,
   playlists: playlistsReducer,
   currentUser: currentUser

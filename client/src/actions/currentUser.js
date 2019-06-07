@@ -1,8 +1,8 @@
-export const setCurrentUser = (user) => {
+export const currentUser = (user) => {
   return {
     type: 'SET_CURRENT_USER',
     user
   };
 };
 
-export default setCurrentUser;
+export default currentUser;

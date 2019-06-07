@@ -12,9 +12,7 @@ export default function currentUser (state={
   switch (action.type) {
 
     case 'SET_CURRENT_USER':
-      let user = action.user
-      user["loggedIn"] = true
-      return { user }
+      return { user: action.user }
 
     default:
       return state;

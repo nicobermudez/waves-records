@@ -8,7 +8,7 @@ import { changeMood } from '../actions/changeMood'
 class Home extends Component {
 
   fetchPlaylistsFromHome = () => {
-    this.props.fetchPlaylists(this.props.mood, this.props.user.access_token)
+    this.props.fetchPlaylists(this.props.mood, this.props.currentUser.user.access_token)
   }
 
   handleMoodChange = event => {
@@ -20,8 +20,8 @@ class Home extends Component {
       this.fetchPlaylistsFromHome()
   }
 
-  componentDidMount() {
-    if(this.props.playlists.length == 0) {
+  componentWillMount() {
+    if(this.props.playlists.length === 0 && Object.entries(this.props.currentUser).length !== 0) {
       this.fetchPlaylistsFromHome()
     }
   }
@@ -32,7 +32,6 @@ class Home extends Component {
       <>
         <section className="home">
           <h1>Featured</h1>
-
           <Mood
             handleMoodChange={this.handleMoodChange}
             handleMoodSubmit={this.handleMoodSubmit}
@@ -50,9 +49,11 @@ class Home extends Component {
   }
 }
 
+
+
 const mapStateToProps = state => {
   return {
-    user: state.currentUser.user,
+    currentUser: state.currentUser.user,
     mood: state.mood.mood,
     playlists: state.playlists.playlists
   }
