@@ -12,9 +12,17 @@ componentWillMount() {
     this.props.fetchCurrentUser();
 }
 
+active_user = () => {
+  if(Object.entries(this.props.currentUser).length != 0) {
+    return true
+  }  else {
+    return false
+  }
+}
+
   render() {
       // if user is logged in, show home, else direct to landing page
-      if(Object.entries(this.props.currentUser).length != 0) {
+      if(this.active_user()) {
         return (
           <div className="App">
             <NavBar currentUser={this.props.currentUser}/>

@@ -3,29 +3,30 @@ import Playlist from './Playlist'
 import { connect } from 'react-redux'
 
 export default class Playlists extends Component {
-  state = {
-    playlists: []
-  }
-
-  componentWillMount() {
-  }
-
 
   render() {
-    const playlistList = this.state.playlists.map(playlist => {
+    if(this.props.playlists.length === 0) {
       return (
-        <Playlist
-          key={playlist.id}
-          playlist={playlist}
-          addPlaylist={this.props.addPlaylists}
-        />
+        <div className="empty">
+          <h1> You currently do not have any saved playlists. </h1>
+        </div>
       )
-    });
+    } else {
+      const playlistList = this.props.playlists.map(playlist => {
+        return (
+          <Playlist
+            key={playlist.id}
+            playlist={playlist}
+            addPlaylist={this.props.addPlaylists}
+          />
+        )
+      });
 
-    return (
-      <div className="playlists">
-        {playlistList}
-      </div>
-    )
-  }
+      return (
+        <div className="playlists">
+          {playlistList}
+        </div>
+      )
+    }
+    }
 }

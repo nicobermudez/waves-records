@@ -13,11 +13,11 @@ export const addUserPlaylist = (playlist) => {
       credentials: "include"
     })
       .then(response => response.json())
-      .then(playlists => {
-        if(playlists.error) {
-          console.log(playlists.error)
+      .then(playlist => {
+        if(playlist.error) {
+          console.log(playlist.error)
         } else {
-          dispatch()
+          dispatch({ type: "ADD_PLAYLISTS", playlist })
         }
       })
   }
