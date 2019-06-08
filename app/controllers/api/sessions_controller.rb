@@ -7,7 +7,7 @@ class Api::SessionsController < ApplicationController
     if params[:error]
       render json: {error: "Invalid credentials"}
     else
-      
+
       # Authorize user from Spotify and store session
       body = {
         grant_type: "authorization_code",
@@ -34,12 +34,12 @@ class Api::SessionsController < ApplicationController
     end
 
     session[:user_id] = @user.id
-    redirect_to "http://localhost:3001"
+    redirect_to "https://wavesrecords.netlify.com"
   end
 
   def destroy
     session.clear
-    redirect_to "http://localhost:3001"
+    redirect_to "https://wavesrecords.netlify.com"
   end
 
 
