@@ -11,7 +11,14 @@ export default class Playlist extends Component {
         </a>
         <div className="save">
           <h3>{this.props.playlist.name}</h3>
-          <PlaylistInput playlist={this.props.playlist} addPlaylist={this.props.addPlaylist}/>
+
+          <PlaylistInput
+            playlist={this.props.playlist}
+            addPlaylist={this.props.addPlaylist}
+            isFavorited={true}
+            deletePlaylist={this.props.deletePlaylist}
+          />
+          
         </div>
       </div>
     )

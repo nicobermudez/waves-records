@@ -24,7 +24,7 @@ class NavBar extends Component {
             <img src={playlists} alt=""/><Link to="/playlists">Playlists</Link>
           </div>
           <div className="link">
-            <img src={link} alt=""/><Link to="https://open.spotify.com/browse/featured">Spotify</Link>
+            <img src={link} alt=""/><a href="https://open.spotify.com/browse/featured">Spotify</a>
           </div>
           <div className="link">
             <img src={logout} alt=""/><Link to="/logout">Log Out</Link>

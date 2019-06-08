@@ -24,6 +24,17 @@ class Api::PlaylistsController < ApplicationController
     end
   end
 
+  def destroy
+    @playlist = Playlist.find_by(id: params[:id])
+    @user = active_user
+    if logged_in?
+      @user.playlists.delete(@playlist)
+      render json: @user.playlists
+    else
+      render json: {error: "Unable to delete"}
+    end
+  end
+
   private
 
   def playlist_params

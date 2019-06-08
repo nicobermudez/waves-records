@@ -13,11 +13,14 @@ export default class Playlists extends Component {
     } else {
       const playlistList = this.props.playlists.map(playlist => {
         return (
+
           <Playlist
             key={playlist.id}
             playlist={playlist}
             addPlaylist={this.props.addPlaylist}
+            deletePlaylist={this.props.deletePlaylist}
           />
+
         )
       });
 
@@ -27,5 +30,5 @@ export default class Playlists extends Component {
         </div>
       )
     }
-    }
+  }
 }

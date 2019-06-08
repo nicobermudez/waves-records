@@ -17,6 +17,7 @@ export default class Featured extends Component {
               <PlaylistInput
                 addPlaylist={this.props.addPlaylist}
                 playlist={playlist}
+                isFavorited={false}
               />
             </div>
           </div>

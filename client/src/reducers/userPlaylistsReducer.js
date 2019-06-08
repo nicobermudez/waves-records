@@ -10,6 +10,9 @@ export default function userPlaylistsReducer(state = {
     case 'ADD_PLAYLISTS':
       return { ...state, user_playlists: state.user_playlists.concat(action.playlist) }
 
+    case 'DELETE_PLAYLISTS':
+      return { user_playlists: action.playlists }
+
     default:
       return state;
   }

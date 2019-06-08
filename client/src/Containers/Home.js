@@ -5,11 +5,12 @@ import { connect } from 'react-redux'
 import { fetchPlaylists } from '../actions/fetchPlaylists'
 import { addUserPlaylist } from '../actions/addUserPlaylist'
 import { changeMood } from '../actions/changeMood'
+import { fetchUserPlaylists } from '../actions/fetchUserPlaylists'
 
 class Home extends Component {
 
   fetchPlaylistsFromHome = () => {
-    this.props.fetchPlaylists(this.props.mood, this.props.currentUser.user.access_token)
+    this.props.fetchPlaylists(this.props.mood, this.props.currentUser.user.access_token, this.props.userPlaylists)
   }
 
   handleMoodChange = event => {
@@ -27,8 +28,8 @@ class Home extends Component {
     }
   }
 
-
   render() {
+
     return (
       <>
         <section className="home">
@@ -51,16 +52,13 @@ class Home extends Component {
   }
 }
 
-
-
 const mapStateToProps = state => {
   return {
     currentUser: state.currentUser.user,
     mood: state.mood.mood,
-    playlists: state.playlists.playlists
+    playlists: state.playlists.playlists,
+    userPlaylists: state.userPlaylists
   }
 }
 
-// const mapDispatchToProps = dispatch => {}
-
-export default connect(mapStateToProps, { fetchPlaylists, changeMood, addUserPlaylist })(Home)
+export default connect(mapStateToProps, { fetchPlaylists, changeMood, addUserPlaylist, fetchUserPlaylists })(Home)

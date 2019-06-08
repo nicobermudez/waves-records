@@ -4,25 +4,29 @@ import not_liked from '../../assets/iconmonstr-favorite-4-240.png'
 
 export default class PlaylistInput extends Component {
   state = {
-    favorite: false
+    favorited: false
   }
 
   handleOnChange(event) {
-
     if (this.state.favorite === false) {
       this.setState({
-        favorite: true
+        favorited: true
       })
+
+      // add playlist to user's playlists
       this.props.addPlaylist(this.props.playlist)
     } else {
       this.setState({
-        favorite: false
+        favorited: false
       })
+
+      // delete playlist from user's playlists
+      this.props.deletePlaylist(this.props.playlist)
     }
   }
 
   render() {
-    if(this.state.favorite === false) {
+    if(this.state.favorite === false || !this.props.isFavorited) {
       return (
         <div className="liked">
           <input

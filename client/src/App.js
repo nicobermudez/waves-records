@@ -3,6 +3,7 @@ import './App.css';
 import NavBar from './Containers/NavBar'
 import LandingPage from './Containers/LandingPage'
 import fetchCurrentUser from './actions/fetchCurrentUser'
+import fetchUserPlaylists from './actions/fetchUserPlaylists'
 import { connect } from 'react-redux'
 
 
@@ -20,12 +21,20 @@ active_user = () => {
   }
 }
 
+componentDidMount() {
+  this.props.fetchUserPlaylists();
+}
+
   render() {
+    console.log(this.props.userPlaylists)
       // if user is logged in, show home, else direct to landing page
       if(this.active_user()) {
         return (
           <div className="App">
-            <NavBar currentUser={this.props.currentUser}/>
+            <NavBar
+              currentUser={this.props.currentUser}
+              userPlaylists={this.props.userPlaylists}
+            />
           </div>
         );
       } else {
@@ -40,9 +49,10 @@ active_user = () => {
 
 const mapStateToProps = state => {
   return {
-    currentUser: state.currentUser.user
+    currentUser: state.currentUser.user,
+    userPlaylists: state.userPlaylists.user_playlists
   }
 }
 
 
-export default connect(mapStateToProps, { fetchCurrentUser })(App);
+export default connect(mapStateToProps, { fetchCurrentUser, fetchUserPlaylists })(App);
