@@ -32,6 +32,10 @@
 
 /* Home */
 
+.fileUploader .fileContainer {
+  background: none;
+}
+
 /* Nav */
 .App-header {
   background-color: rgb(10, 10, 10);

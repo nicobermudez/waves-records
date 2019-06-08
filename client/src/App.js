@@ -26,7 +26,6 @@ componentDidMount() {
 }
 
   render() {
-    console.log(this.props.userPlaylists)
       // if user is logged in, show home, else direct to landing page
       if(this.active_user()) {
         return (
