@@ -13,6 +13,7 @@ export const fetchMood = (picture) => {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
       },
+      mode: 'no-cors'
     })
       .then(response => response.json())
       .then(mood => dispatch({ type: 'FACIAL_RECOGNITION_CHANGE_MOOD', mood}))
