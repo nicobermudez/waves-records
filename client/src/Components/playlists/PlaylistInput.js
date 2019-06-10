@@ -8,7 +8,7 @@ export default class PlaylistInput extends Component {
   }
 
   handleOnChange(event) {
-    if (this.state.favorite === false) {
+    if (this.state.favorited === false) {
       this.setState({
         favorited: true
       })
@@ -26,7 +26,7 @@ export default class PlaylistInput extends Component {
   }
 
   render() {
-    if(this.state.favorite === false || !this.props.isFavorited) {
+    if(this.state.favorited === false || !this.props.isFavorited) {
       return (
         <div className="liked">
           <input

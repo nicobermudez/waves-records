@@ -2,7 +2,7 @@ require 'pry'
 class Api::UsersController < ApplicationController
 
   def index
-      render json: @user
+    render json: @user
   end
 
   private
