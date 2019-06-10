@@ -6,9 +6,15 @@ import { fetchPlaylists } from '../actions/fetchPlaylists'
 import { addUserPlaylist } from '../actions/addUserPlaylist'
 import { changeMood } from '../actions/changeMood'
 import { fetchUserPlaylists } from '../actions/fetchUserPlaylists'
+import { fetchMood } from '../actions/fetchMood'
 import { connect } from 'react-redux'
 
 class Home extends Component {
+
+  constructor(props) {
+    super(props);
+    this.uploadImage.bind(this);
+  }
 
   fetchPlaylistsFromHome = () => {
     if(this.props.mood === "") {
@@ -27,8 +33,14 @@ class Home extends Component {
       this.fetchPlaylistsFromHome()
   }
 
-  uploadImage(picture) {
+  fetchMoodFromHome = (picture) => {
+    debugger
+    this.props.fetchMood(picture)
+  }
 
+  uploadImage(picture) {
+    debugger
+    this.fetchMoodFromHome(picture)
   }
 
   componentWillMount() {
@@ -78,4 +90,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { fetchPlaylists, changeMood, addUserPlaylist, fetchUserPlaylists })(Home)
+export default connect(mapStateToProps, { fetchPlaylists, changeMood, addUserPlaylist, fetchUserPlaylists, fetchMood })(Home)
