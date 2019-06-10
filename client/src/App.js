@@ -20,14 +20,6 @@ active_user = () => {
   }
 }
 
-// componentDidMount() {
-//   debugger
-//   if(this.active_user()) {
-//     this.props.fetchUserPlaylists();
-//   }
-//
-// }
-
   render() {
       // if user is logged in, show home, else direct to landing page
       if(this.active_user()) {

@@ -44,13 +44,13 @@ class Home extends Component {
   }
 
   componentWillMount() {
+    this.props.fetchUserPlaylists();
     if(this.props.playlists.length === 0 && Object.entries(this.props.currentUser).length !== 0) {
       this.fetchPlaylistsFromHome()
     }
   }
 
   render() {
-
     return (
       <>
         <section className="home">
