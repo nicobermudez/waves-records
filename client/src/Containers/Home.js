@@ -16,11 +16,11 @@ class Home extends Component {
     this.uploadImage = this.uploadImage.bind(this);
   }
 
-  fetchPlaylistsFromHome = () => {
-    if(this.props.mood === "") {
+  fetchPlaylistsFromHome = (mood) => {
+    if(mood === "") {
       this.props.fetchPlaylists("Happy", this.props.currentUser.user.access_token, this.props.userPlaylists)
     } else {
-      this.props.fetchPlaylists(this.props.mood, this.props.currentUser.user.access_token, this.props.userPlaylists)
+      this.props.fetchPlaylists(mood, this.props.currentUser.user.access_token, this.props.userPlaylists)
     }
   }
 
@@ -30,7 +30,7 @@ class Home extends Component {
 
   handleMoodSubmit = event => {
       event.preventDefault()
-      this.fetchPlaylistsFromHome()
+      this.fetchPlaylistsFromHome(this.props.mood)
   }
 
   fetchMoodFromHome = (picture) => {
@@ -38,14 +38,12 @@ class Home extends Component {
   }
 
   uploadImage(picture) {
-    this.fetchMoodFromHome(picture)
+    this.fetchMoodFromHome(picture[0])
   }
 
   componentWillMount() {
     this.props.fetchUserPlaylists();
-    if(this.props.playlists.length === 0 && Object.entries(this.props.currentUser).length !== 0) {
-      this.fetchPlaylistsFromHome()
-    }
+    this.fetchPlaylistsFromHome(this.props.mood)
   }
 
   render() {
