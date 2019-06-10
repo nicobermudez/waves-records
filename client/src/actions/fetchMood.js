@@ -9,13 +9,12 @@ export const fetchMood = (picture) => {
   return(dispatch) => {
     fetch(facePlusPlusUrl, {
       method: 'post',
+      mode: 'no-cors',
       headers: {
-        'Accept': 'application/json',
         'Content-Type': 'application/json',
       },
-      mode: 'no-cors'
     })
       .then(response => response.json())
-      .then(mood => dispatch({ type: 'FACIAL_RECOGNITION_CHANGE_MOOD', mood}))
+      .then(mood => dispatch({ type: 'FACIAL_RECOGNITION_CHANGE_MOOD', mood }))
   }
 }
