@@ -15,10 +15,10 @@ export default class Playlist extends Component {
           <PlaylistInput
             playlist={this.props.playlist}
             addPlaylist={this.props.addPlaylist}
-            isFavorited={true}
             deletePlaylist={this.props.deletePlaylist}
+            favorited={true}
           />
-          
+
         </div>
       </div>
     )

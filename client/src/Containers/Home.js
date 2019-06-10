@@ -13,7 +13,7 @@ class Home extends Component {
 
   constructor(props) {
     super(props);
-    this.uploadImage.bind(this);
+    this.uploadImage = this.uploadImage.bind(this);
   }
 
   fetchPlaylistsFromHome = () => {
@@ -34,23 +34,21 @@ class Home extends Component {
   }
 
   fetchMoodFromHome = (picture) => {
-    debugger
     this.props.fetchMood(picture)
   }
 
   uploadImage(picture) {
-    debugger
     this.fetchMoodFromHome(picture)
   }
 
   componentWillMount() {
+    this.props.fetchUserPlaylists();
     if(this.props.playlists.length === 0 && Object.entries(this.props.currentUser).length !== 0) {
       this.fetchPlaylistsFromHome()
     }
   }
 
   render() {
-
     return (
       <>
         <section className="home">
