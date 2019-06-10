@@ -30,7 +30,7 @@ class Api::SessionsController < ApplicationController
         u.image = user_params["images"][0]["url"]
         u.spotify_url = user_params["href"]
       end
-      @user.update(access_token: auth_params["access_token"], refresh_token: auth_params["refresh_token"])
+      @user.update(access_token: auth_params["access_token"], refresh_token: auth_params["refresh_token"], expires_in: auth_params["expires_in"], login_time: Time.now)
     end
 
     session[:user_id] = @user.id
@@ -44,10 +44,12 @@ class Api::SessionsController < ApplicationController
 
 
   def get_current_user
-    if logged_in?
+    if logged_in? && !token_expired?
       render json: {
         user: UserSerializer.new(active_user)
       }, status: :ok
+    elsif logged_in? && token_expired?
+      redirect_to api_logout_path
     else
       render json: {error: "No current user"}
     end
