@@ -13,7 +13,7 @@ class Home extends Component {
 
   constructor(props) {
     super(props);
-    this.uploadImage.bind(this);
+    this.uploadImage = this.uploadImage.bind(this);
   }
 
   fetchPlaylistsFromHome = () => {
@@ -34,12 +34,10 @@ class Home extends Component {
   }
 
   fetchMoodFromHome = (picture) => {
-    debugger
     this.props.fetchMood(picture)
   }
 
   uploadImage(picture) {
-    debugger
     this.fetchMoodFromHome(picture)
   }
 
