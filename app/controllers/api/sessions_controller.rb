@@ -12,7 +12,7 @@ class Api::SessionsController < ApplicationController
       body = {
         grant_type: "authorization_code",
         code: params[:code],
-        redirect_uri: "http://localhost:3000/api/auth/spotify/callback",
+        redirect_uri: "https://sheltered-waters-54715.herokuapp.com/api/auth/spotify/callback",
         client_id: ENV["SPOTIFY_ID"],
         client_secret: ENV["SPOTIFY_SECRET"]
       }
