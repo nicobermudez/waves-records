@@ -34,6 +34,7 @@ class Home extends Component {
   }
 
   fetchMoodFromHome = (picture) => {
+    console.log(picture)
     this.props.fetchMood(picture)
   }
 
@@ -41,7 +42,7 @@ class Home extends Component {
     const formData = new FormData();
     formData.append('image', file[0])
 
-    fetch("http://localhost:3000/api/photos", {
+    fetch("https://sheltered-waters-54715.herokuapp.com/api/photos", {
       method: "POST",
       body: formData,
       credentials: "include"
