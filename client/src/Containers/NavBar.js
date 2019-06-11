@@ -38,6 +38,7 @@ class NavBar extends Component {
         <Route exact path="/" component={Home} />
         <Route exact path="/playlists" component={PlaylistsContainer} />
         <Route exact path="/logout" component={Logout} />
+        
       </Router>
     )
   }

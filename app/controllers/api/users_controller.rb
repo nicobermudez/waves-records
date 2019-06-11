@@ -1,12 +1,8 @@
-
 class Api::UsersController < ApplicationController
 
   def index
+    @user = active_user
     render json: @user
-  end
-
-  def edit
-    binding.pry
   end
 
   private

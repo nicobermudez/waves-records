@@ -5,9 +5,7 @@ import deletePlaylist from '../actions/deletePlaylist'
 import { connect } from 'react-redux'
 
 class PlaylistsContainer extends Component {
-
-
-
+  
   render() {
     return (
       <section className="playlistsContainer">
