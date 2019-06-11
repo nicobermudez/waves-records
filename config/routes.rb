@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   namespace :api do
     resources :users
     resources :playlists
+    resources :photos
 
     # spotify auth
     get '/auth/login', to: 'auth#spotify_request'
