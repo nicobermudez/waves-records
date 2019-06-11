@@ -7,7 +7,7 @@ class Api::AuthController < ApplicationController
       query_params = {
         client_id: ENV['SPOTIFY_ID'],
         response_type: 'code',
-        redirect_uri: 'http://localhost:3000/api/auth/spotify/callback',
+        redirect_uri: 'https://sheltered-waters-54715.herokuapp.com/api/auth/spotify/callback',
         scope: "user-library-read
         playlist-read-collaborative
         playlist-modify-private

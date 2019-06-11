@@ -1,6 +1,6 @@
 export const addUserPlaylist = (playlist) => {
   return (dispatch) => {
-    fetch("http://localhost:3000/api/playlists", {
+    fetch("https://sheltered-waters-54715.herokuapp.com/api/playlists", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

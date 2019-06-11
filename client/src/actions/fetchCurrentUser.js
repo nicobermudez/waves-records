@@ -2,7 +2,7 @@ import { currentUser } from './currentUser'
 
 export const fetchCurrentUser = () => {
   return(dispatch) => {
-    fetch("http://localhost:3000/api/get_current_user", {
+    fetch("https://sheltered-waters-54715.herokuapp.com/api/get_current_user", {
       headers: {
         "Content-Type": "application/json"
       },

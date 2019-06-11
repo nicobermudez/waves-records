@@ -4,7 +4,7 @@ import spotify_login from '../../assets/spotify_login.png'
 class Login extends Component  {
 
   handleClick = event => {
-    window.location = "http://localhost:3000/api/auth/login"
+    window.location = "https://sheltered-waters-54715.herokuapp.com/api/auth/login"
   }
 
   render() {

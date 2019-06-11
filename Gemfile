@@ -3,11 +3,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.2'
 
-# Spotify authentication
-gem 'omniauth-oauth2'
-gem 'omniauth-spotify-oauth2'
-gem 'jwt'
-
 gem 'httparty'
 
 gem 'rest-client'
