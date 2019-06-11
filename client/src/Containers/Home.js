@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Mood from '../Components/main/Mood'
+import Search from '../Components/main/Search'
 import Featured from '../Components/main/Featured'
 import ImageUploader from 'react-images-upload';
 import { fetchPlaylists } from '../actions/fetchPlaylists'
@@ -7,7 +7,7 @@ import { addUserPlaylist } from '../actions/addUserPlaylist'
 import { changeMood } from '../actions/changeMood'
 import { fetchUserPlaylists } from '../actions/fetchUserPlaylists'
 import { fetchMood } from '../actions/fetchMood'
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 
 class Home extends Component {
 
@@ -62,14 +62,20 @@ class Home extends Component {
         <section className="home">
           <h1>Home</h1>
 
+          <h2>Upload Image</h2>
+
           <ImageUploader
             buttonText='Upload Image'
             onChange={this.uploadImage}
             imgExtension={['.jpg', '.png', '.jpeg']}
             maxFileSize={2000000}
+            withPreview
           />
 
-          <Mood
+          <br/><h2>or</h2><br/>
+          <h2>Search</h2>
+
+          <Search
             handleMoodChange={this.handleMoodChange}
             handleMoodSubmit={this.handleMoodSubmit}
             playlists={this.props.playlists}
@@ -86,6 +92,22 @@ class Home extends Component {
     )
   }
 }
+
+// <form onSubmit={this.uploadImage}>
+//   <input
+//     type="text"
+//     placeholder="Insert Image URL"
+//     name="url"
+//     className="input"
+//   />
+//   <input
+//     type="submit"
+//     value="Upload"
+//     className="submit"
+//   />
+// </form>
+
+
 
 const mapStateToProps = state => {
   return {

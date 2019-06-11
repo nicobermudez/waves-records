@@ -1,4 +1,4 @@
-export function fetchPlaylists(mood, token, userPlaylists) {
+export function fetchPlaylists(mood, token) {
 
     let url = "https://api.spotify.com/v1/search?q=" + mood + "&type=playlist&limit=9"
     return (dispatch) => {
@@ -12,7 +12,7 @@ export function fetchPlaylists(mood, token, userPlaylists) {
         }
       })
         .then(response => response.json())
-        .then(data => dispatch({ type: "FETCH_PLAYLISTS", payload: data, userPlaylists }))
+        .then(data => dispatch({ type: "FETCH_PLAYLISTS", payload: data}))
     }
 }
 
