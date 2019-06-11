@@ -1,4 +1,6 @@
-export function fetchMood(image) {
+import { fetchPlaylists } from './fetchPlaylists'
+
+export function fetchMood(image, token) {
 
   const api_key = 'api_key=ZksgXAn3YithLhxw5Ia_FlszlpNZRGRN'
   const api_secret = '&api_secret=oB0ryqv7-S8Ukpq6mX47NaqKvf9i6ePr'
@@ -15,6 +17,11 @@ export function fetchMood(image) {
       .then(response => response.json())
       .then(mood =>
         dispatch({ type: 'FACIAL_RECOGNITION_CHANGE_MOOD', mood })
+        let facial_recognition_emotions = action.mood.faces[0].attributes.emotion
+        let max_emotion = Object.keys(facial_recognition_emotions).reduce((a, b) => facial_recognition_emotions[a] > facial_recognition_emotions[b] ? a : b);
+        mood = max_emotion;
+        return mood;
     )
+      .then(mood => (dispatch(fetchPlaylists(mood, token))));
   }
 }
