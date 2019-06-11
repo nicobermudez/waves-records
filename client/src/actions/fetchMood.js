@@ -15,12 +15,12 @@ export function fetchMood(image, token) {
       headers: new Headers()
     })
       .then(response => response.json())
-      .then(mood =>
-        dispatch({ type: 'FACIAL_RECOGNITION_CHANGE_MOOD', mood })
-        let facial_recognition_emotions = action.mood.faces[0].attributes.emotion
-        let max_emotion = Object.keys(facial_recognition_emotions).reduce((a, b) => facial_recognition_emotions[a] > facial_recognition_emotions[b] ? a : b);
-        mood = max_emotion;
-        return mood;
+      .then(mood => {
+        dispatch({ type: 'FACIAL_RECOGNITION_CHANGE_MOOD', mood });
+        let facial_recognition_emotions = mood.faces[0].attributes.emotion
+        mood = Object.keys(facial_recognition_emotions).reduce((a, b) => facial_recognition_emotions[a] > facial_recognition_emotions[b] ? a : b);
+        return mood
+      }
     )
       .then(mood => (dispatch(fetchPlaylists(mood, token))));
   }
