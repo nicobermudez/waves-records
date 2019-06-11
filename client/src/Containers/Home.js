@@ -62,8 +62,6 @@ class Home extends Component {
         <section className="home">
           <h1>Home</h1>
 
-          <h2>Upload Image</h2>
-
           <ImageUploader
             buttonText='Upload Image'
             onChange={this.uploadImage}
@@ -72,7 +70,7 @@ class Home extends Component {
             withPreview
           />
 
-          <br/><h2>or</h2><br/>
+          <h2>or</h2>
           <h2>Search</h2>
 
           <Search

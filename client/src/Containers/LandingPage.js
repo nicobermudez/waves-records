@@ -4,6 +4,7 @@ import waves from '../assets/waves.png'
 import mood from '../assets/iconmonstr-smiley-13-240.png'
 import listen from '../assets/iconmonstr-headphones-2-240.png'
 import save from '../assets/iconmonstr-download-15-240.png'
+import selfie from '../assets/IMG_0379.jpeg'
 
 export default class LandingPage extends Component {
 
@@ -36,6 +37,16 @@ export default class LandingPage extends Component {
               <h4>Save</h4>
               <p>Save your playlists so you can come back and listen later</p>
             </div>
+          </div>
+
+          <div className="description">
+            <img src={selfie} alt="selfie" />
+            <p>Take a selfie or upload an old photo that you think captures your current state of mind. Through facial recognition, we'll take care of the rest!</p>
+          </div>
+
+          <div className="description">
+            <img src={} alt="demo"/>
+            <p>Save any playlists you like so that you can listen to them at any time!</p>
           </div>
         </section>
       </>

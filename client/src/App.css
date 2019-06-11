@@ -53,11 +53,19 @@
   width: 80px;
 }
 
+.description {
+  display: flex;
+}
+.description img {
+  width: 200px;
+}
 
 /* Home */
 
 .fileUploader .fileContainer {
   background: none;
+  padding: 0;
+  margin: 0;
 }
 
 /* Nav */
