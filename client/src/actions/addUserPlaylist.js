@@ -8,7 +8,7 @@ export const addUserPlaylist = (playlist) => {
       body: JSON.stringify({
         name: playlist.name,
         href: playlist.external_urls.spotify,
-        image: playlist.images[0].url
+        cover_image: playlist.images[0].url
       }),
       credentials: "include"
     })
