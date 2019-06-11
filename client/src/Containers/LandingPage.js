@@ -45,7 +45,7 @@ export default class LandingPage extends Component {
           </div>
 
           <div className="description">
-            <img src={} alt="demo"/>
+            <img src={waves} alt="demo"/>
             <p>Save any playlists you like so that you can listen to them at any time!</p>
           </div>
         </section>
