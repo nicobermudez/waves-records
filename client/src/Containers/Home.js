@@ -37,8 +37,17 @@ class Home extends Component {
     this.props.fetchMood(picture)
   }
 
-  uploadImage(picture) {
-    this.fetchMoodFromHome(picture[0])
+  uploadImage(file) {
+    const formData = new FormData();
+    formData.append('image', file[0])
+
+    fetch("http://localhost:3000/api/photos", {
+      method: "POST",
+      body: formData,
+      credentials: "include"
+    })
+    .then(response => response.json())
+    .then(data => this.fetchMoodFromHome(data.image))
   }
 
   componentWillMount() {
