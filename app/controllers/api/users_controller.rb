@@ -5,6 +5,10 @@ class Api::UsersController < ApplicationController
     render json: @user
   end
 
+  def edit
+    binding.pry
+  end
+
   private
 
   def user_params

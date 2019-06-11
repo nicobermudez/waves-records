@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class Mood extends Component {
+export default class Search extends Component {
 
   render() {
     return (
@@ -11,7 +11,7 @@ export default class Mood extends Component {
             name="mood"
             className="input"
             id="mood"
-            value={this.props.mood}
+            placeholder="Search"
             onChange={event => this.props.handleMoodChange(event)}
           />
           <input

@@ -13,7 +13,7 @@ gem 'httparty'
 gem 'rest-client'
 
 gem 'rack-cors'
-
+gem 'activestorage'
 gem 'dotenv-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

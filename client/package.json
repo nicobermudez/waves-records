@@ -5,10 +5,13 @@
   "dependencies": {
     "ajax": "0.0.4",
     "axios": "^0.18.0",
+    "filepond": "^4.4.9",
     "isomorphic-fetch": "^2.2.1",
     "jquery": "^3.4.1",
     "react": "^16.8.6",
+    "react-activestorage-provider": "^0.8.0",
     "react-dom": "^16.8.6",
+    "react-filepond": "^7.0.1",
     "react-images-upload": "^1.2.6",
     "react-redux": "^7.0.3",
     "react-router-dom": "^5.0.1",
