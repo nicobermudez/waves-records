@@ -1,4 +1,4 @@
-require 'pry'
+
 require 'rest-client'
 
 class Api::SessionsController < ApplicationController

@@ -1,4 +1,4 @@
-require 'pry'
+
 class Api::UsersController < ApplicationController
 
   def index
