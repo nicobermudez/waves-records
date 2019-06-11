@@ -57,6 +57,12 @@ footer {
   bottom: 0;
 }
 
+.landing-page footer p {
+  margin: 0;
+  padding: 20px;
+  font-size: 14px;
+}
+
 /* Home */
 
 .fileUploader .fileContainer {

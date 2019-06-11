@@ -11,11 +11,13 @@ import { connect } from 'react-redux';
 
 class Home extends Component {
 
+// Bind this to uploadImage so it can access class functions and props
   constructor(props) {
     super(props);
     this.uploadImage = this.uploadImage.bind(this);
   }
 
+// Fetch playlists, if there is nothing in the search input or no mood set, return happy playlists
   fetchPlaylistsFromHome = (mood) => {
     if(mood === "") {
       this.props.fetchPlaylists("Happy", this.props.currentUser.user.access_token, this.props.userPlaylists)
@@ -24,24 +26,25 @@ class Home extends Component {
     }
   }
 
-  handleMoodChange = event => {
+  handleSearchChange = event => {
     this.props.changeMood(event.target.value)
   }
-
-  handleMoodSubmit = event => {
+// Fetch playlists once a new search item is submitted
+  handleSearchSubmit = event => {
       event.preventDefault()
       this.fetchPlaylistsFromHome(this.props.mood)
   }
 
+// Fetch mood given the uploaded image and fetch playlists to reflect new mood
   fetchMoodFromHome = (picture) => {
-    console.log(picture)
     this.props.fetchMood(picture)
+    this.props.fetchPlaylistsFromHome(this.props.mood)
   }
 
+// Upload image to backend to get workable URL for Face++ API
   uploadImage(file) {
     const formData = new FormData();
     formData.append('image', file[0])
-
     fetch("https://sheltered-waters-54715.herokuapp.com/api/photos", {
       method: "POST",
       body: formData,
@@ -51,6 +54,7 @@ class Home extends Component {
     .then(data => this.fetchMoodFromHome(data.image))
   }
 
+// Initialize with playlists in both /home and /playlists
   componentWillMount() {
     this.props.fetchUserPlaylists();
     this.fetchPlaylistsFromHome(this.props.mood)
@@ -67,15 +71,14 @@ class Home extends Component {
             onChange={this.uploadImage}
             imgExtension={['.jpg', '.png', '.jpeg']}
             maxFileSize={2000000}
-            withPreview
           />
 
           <h2>or</h2>
           <h3>Search</h3>
 
           <Search
-            handleMoodChange={this.handleMoodChange}
-            handleMoodSubmit={this.handleMoodSubmit}
+            handleSearchChange={this.handleSearchChange}
+            handleSearchSubmit={this.handleSearchSubmit}
             playlists={this.props.playlists}
             mood={this.props.mood}
           />
@@ -90,22 +93,6 @@ class Home extends Component {
     )
   }
 }
-
-// <form onSubmit={this.uploadImage}>
-//   <input
-//     type="text"
-//     placeholder="Insert Image URL"
-//     name="url"
-//     className="input"
-//   />
-//   <input
-//     type="submit"
-//     value="Upload"
-//     className="submit"
-//   />
-// </form>
-
-
 
 const mapStateToProps = state => {
   return {

@@ -8,10 +8,12 @@ import { connect } from 'react-redux'
 
 class App extends Component {
 
+// Fetch current user if user is logged in
 componentWillMount() {
     this.props.fetchCurrentUser();
 }
 
+// Return true if current user is logged in, false if otherwise
 active_user = () => {
   if(Object.entries(this.props.currentUser).length !== 0) {
     return true

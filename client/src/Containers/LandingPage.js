@@ -4,8 +4,6 @@ import waves from '../assets/waves.png'
 import mood from '../assets/iconmonstr-smiley-13-240.png'
 import listen from '../assets/iconmonstr-headphones-2-240.png'
 import save from '../assets/iconmonstr-download-15-240.png'
-import selfie from '../assets/IMG_0379.jpeg'
-import home from '../assets/home.png'
 
 export default class LandingPage extends Component {
 
