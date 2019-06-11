@@ -7,7 +7,7 @@ export default class Playlist extends Component {
     return (
       <div className="playlist" key={this.props.playlist.id}>
         <a href={this.props.playlist.href}>
-          <img src={this.props.playlist.image} alt=""/>
+          <img src={this.props.playlist.cover_image} alt=""/>
         </a>
         <div className="save">
           <h3>{this.props.playlist.name}</h3>
