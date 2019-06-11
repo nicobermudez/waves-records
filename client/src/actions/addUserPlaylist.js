@@ -17,7 +17,7 @@ export const addUserPlaylist = (playlist) => {
         if(playlist.error) {
           console.log(playlist.error)
         } else {
-          dispatch({ type: "ADD_PLAYLISTS", playlist })
+          dispatch({ type: "ADD_PLAYLIST", playlist })
         }
       })
   }

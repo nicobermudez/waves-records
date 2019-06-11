@@ -9,7 +9,7 @@ export const deletePlaylist = (playlist) => {
       body: JSON.stringify({
         name: playlist.name,
         href: playlist.href,
-        image: playlist.image
+        cover_image: playlist.image
       }),
       credentials: "include"
     })

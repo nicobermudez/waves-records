@@ -40,7 +40,7 @@ class Api::PlaylistsController < ApplicationController
     params.require(:playlist).permit(
       :name,
       :href,
-      :image
+      :cover_image
     )
   end
 end
