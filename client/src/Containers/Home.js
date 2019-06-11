@@ -34,6 +34,7 @@ class Home extends Component {
   }
 
   fetchMoodFromHome = (picture) => {
+    console.log(picture)
     this.props.fetchMood(picture)
   }
 
