@@ -71,7 +71,7 @@ class Home extends Component {
           />
 
           <h2>or</h2>
-          <h2>Search</h2>
+          <h3>Search</h3>
 
           <Search
             handleMoodChange={this.handleMoodChange}
