@@ -37,6 +37,7 @@ class Home extends Component {
 
 // Fetch mood given the uploaded image and fetch playlists to reflect new mood
   fetchMoodFromHome = (picture) => {
+    debugger
     this.props.fetchMood(picture, this.props.currentUser.user.acess_token)
   }
 

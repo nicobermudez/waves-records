@@ -204,7 +204,7 @@ footer {
 
 /* About */
 .about {
-  margin: 20px 20px 0 250px;
+  margin: 0 20px 0 250px;
   text-align: center;
 }
 .about .logo {
@@ -353,6 +353,9 @@ footer {
   }
   .playlistsContainer {
     margin: 0;
+  }
+  .about {
+    margin: 0 20px 20px 20px;
   }
 }
 
