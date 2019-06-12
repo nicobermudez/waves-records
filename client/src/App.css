@@ -269,6 +269,7 @@ footer {
     width: 100%;
     bottom: 0;
     text-align: center;
+    top: initial;
   }
   .App-header img {
     display: none;
@@ -284,27 +285,42 @@ footer {
     width: 100%;
     margin: 20px;
     text-align: center;
+    display: initial;
   }
   .link a {
     font-size: 12px;
   }
   .Nav-bar .link img {
     padding: 0;
+    width: 40%;
   }
   .profile-image {
     width: 100%;
     text-align: center;
+    padding-top: 15px;
   }
   .profile-image img {
     width: 75%;
   }
 
   /* Home */
+  .App .home h3 {
+    font-size: 18px;
+    margin-top: 0;
+  }
   .home {
     margin: 0;
   }
+  .home-logo {
+    bottom: 0;
+    top: initial;
+    position: absolute;
+    width: 15%;
+    padding-bottom: 15px;
+    left: 40%;
+  }
   .home h1{
-    margin: 0;
+    margin: 0 auto;
     font-size: 20px;
   }
   .submit {
@@ -312,12 +328,18 @@ footer {
   }
   .playlists {
     display: block;
-    padding-bottom: 30%;
+    padding-bottom: 200px;
   }
   .playlist img {
     width: 50%;
   }
+  .save {
+    display: flex;
+    width: 50%;
+    margin: 5px auto;
+  }
   .playlistsContainer {
     margin: 0;
   }
+
 }

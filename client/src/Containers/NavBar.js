@@ -15,7 +15,7 @@ class NavBar extends Component {
     return (
       <Router>
       <header className="App-header">
-        <img src={waves} alt="Waves"/>
+        <img src={waves} alt="Waves" className="home-logo"/>
         <div className="Nav-bar">
           <div className="link">
             <img src={home} alt="" /><Link to="/">Home</Link>
@@ -38,7 +38,7 @@ class NavBar extends Component {
         <Route exact path="/" component={Home} />
         <Route exact path="/playlists" component={PlaylistsContainer} />
         <Route exact path="/logout" component={Logout} />
-        
+
       </Router>
     )
   }
