@@ -323,7 +323,7 @@ footer {
 
   /* Home */
   .App .home h3 {
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 0;
   }
   .home {
@@ -339,12 +339,18 @@ footer {
   .submit {
     width: 25%;
   }
+
+
   .playlists {
     display: block;
     padding-bottom: 200px;
   }
   .playlist img {
     width: 50%;
+  }
+  .App .save h3 {
+    font-size: 14px;
+    margin: 0;
   }
   .save {
     display: flex;
@@ -354,6 +360,7 @@ footer {
   .playlistsContainer {
     margin: 0;
   }
+
   .about {
     margin: 0 20px 20px 20px;
   }
