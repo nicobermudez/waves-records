@@ -3,11 +3,13 @@ import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import PlaylistsContainer from './PlaylistsContainer'
 import Home from './Home'
 import Logout from '../Components/auth/Logout'
+import About from '../Components/main/About'
 import waves from '../assets/waves.png'
 import home from '../assets/iconmonstr-home-1-240.png'
 import logout from '../assets/iconmonstr-log-out-9-240.png'
 import playlists from '../assets/iconmonstr-equalizer-1-240.png'
 import link from '../assets/iconmonstr-share-9-240.png'
+import globe from '../assets/iconmonstr-globe-6-240.png'
 
 class NavBar extends Component {
 
@@ -24,6 +26,9 @@ class NavBar extends Component {
             <img src={playlists} alt=""/><Link to="/playlists">Playlists</Link>
           </div>
           <div className="link">
+            <img src={globe} alt=""/><Link to="/about">About</Link>
+          </div>
+          <div className="link">
             <img src={link} alt=""/><a href="https://open.spotify.com/browse/featured">Spotify</a>
           </div>
           <div className="link">
@@ -37,6 +42,7 @@ class NavBar extends Component {
 
         <Route exact path="/" component={Home} />
         <Route exact path="/playlists" component={PlaylistsContainer} />
+        <Route exact path="/about" component={About} />
         <Route exact path="/logout" component={Logout} />
 
       </Router>
