@@ -321,7 +321,7 @@ footer {
     width: 15%;
     padding-bottom: 15px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-75%);
   }
   .home h1{
     margin: 0 auto;
@@ -353,7 +353,6 @@ footer {
     width: 20px;
   }
   .Nav-bar .profile-link img {
-    width: 30px;
-    padding: 10px 0;
+    display: none;
   }
 }
