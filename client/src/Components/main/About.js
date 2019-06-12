@@ -8,7 +8,8 @@ export default class About extends Component {
 
   render() {
     return (
-      <>
+      <section className="about">
+      
         <div className="logo">
           <img src={waves} alt="Waves"/>
         </div>
@@ -39,7 +40,7 @@ export default class About extends Component {
             <p>Made by &copy; Nico</p>
           </footer>
         </section>
-      </>
+      </section>
     )
   }
 }
