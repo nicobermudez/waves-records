@@ -20,9 +20,9 @@ class Home extends Component {
 // Fetch playlists, if there is nothing in the search input or no mood set, return happy playlists
   fetchPlaylistsFromHome = (mood) => {
     if(mood === "") {
-      this.props.fetchPlaylists("Happy", this.props.currentUser.user.access_token, this.props.userPlaylists)
+      this.props.fetchPlaylists("Happy", this.props.currentUser.user.access_token)
     } else {
-      this.props.fetchPlaylists(mood, this.props.currentUser.user.access_token, this.props.userPlaylists)
+      this.props.fetchPlaylists(mood, this.props.currentUser.user.access_token)
     }
   }
 
@@ -37,7 +37,7 @@ class Home extends Component {
 
 // Fetch mood given the uploaded image and fetch playlists to reflect new mood
   fetchMoodFromHome = (picture) => {
-    debugger
+    console.log(this.props)
     this.props.fetchMood(picture, this.props.currentUser.user.acess_token)
   }
 
