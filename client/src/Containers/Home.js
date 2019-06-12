@@ -37,8 +37,7 @@ class Home extends Component {
 
 // Fetch mood given the uploaded image and fetch playlists to reflect new mood
   fetchMoodFromHome = (picture) => {
-    console.log(this.props)
-    this.props.fetchMood(picture, this.props.currentUser.user.acess_token)
+    this.props.fetchMood(picture, this.props.currentUser.user.access_token)
   }
 
 // Upload image to backend to get workable URL for Face++ API
