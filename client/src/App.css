@@ -291,6 +291,7 @@ footer {
     margin: 40px 0;
     width: 100%;
     display: inline-flex;
+    left: 0;
   }
   .Nav-bar .link img {
     padding: 0;
@@ -353,7 +354,7 @@ footer {
     width: 20px;
   }
   .Nav-bar .profile-link img {
-    width: 20px;
+    width: 30px;
     padding: 10px 0;
   }
 }
