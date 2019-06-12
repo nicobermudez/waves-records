@@ -277,21 +277,24 @@ footer {
     justify-content: space-evenly;
     padding-bottom: 40px;
   }
-  .list {
-    display: inline-block;
-  }
   .link {
     width: 100%;
-    margin: 20px;
+    margin: 5px;
     text-align: center;
     display: initial;
   }
   .link a {
     font-size: 12px;
   }
+  .Nav-bar {
+    padding: 0;
+    margin: 40px 0;
+    width: 100%;
+    display: inline-flex;
+  }
   .Nav-bar .link img {
     padding: 0;
-    width: 40%;
+    width: 40px;
   }
   .profile-image {
     width: 100%;
@@ -316,7 +319,9 @@ footer {
     position: absolute;
     width: 15%;
     padding-bottom: 15px;
-    left: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+}
   }
   .home h1{
     margin: 0 auto;
@@ -340,5 +345,15 @@ footer {
   .playlistsContainer {
     margin: 0;
   }
+}
 
+@media(max-width: 600px) {
+  .Nav-bar .link img {
+    padding: 0;
+    width: 20px;
+  }
+  .Nav-bar .profile-link img {
+    width: 20px;
+    padding: 10px 0;
+  }
 }
