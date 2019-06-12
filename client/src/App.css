@@ -315,13 +315,7 @@ footer {
     margin: 0;
   }
   .App-header .home-logo {
-    bottom: 0;
-    top: initial;
-    position: absolute;
-    width: 15%;
-    padding-bottom: 15px;
-    left: 50%;
-    transform: translateX(-75%);
+    display: none;
   }
   .home h1{
     margin: 0 auto;
@@ -352,7 +346,7 @@ footer {
     padding: 0;
     width: 20px;
   }
-  .Nav-bar .profile-link img {
+  .Nav-bar .profile-image {
     display: none;
   }
 }
