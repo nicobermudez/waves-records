@@ -11,9 +11,9 @@ class Api::SessionsController < ApplicationController
       body = {
         grant_type: "authorization_code",
         code: params[:code],
-        redirect_uri: "https://sheltered-waters-54715.herokuapp.com/api/auth/spotify/callback",
-        client_id: "6ad53d04954240a6b9cf0aff78a6dc98",
-        client_secret: "6283a99f19674856b05ebbc6aad28afe"
+        redirect_uri: ENV["REDIRECT_URI"],
+        client_id: ENV["SPOTIFY_ID"],
+        client_secret: ENV["SPOTIFY_SECRET"]
       }
       auth_response = RestClient.post("https://accounts.spotify.com/api/token", body)
       auth_params = JSON.parse(auth_response.body)
@@ -33,12 +33,12 @@ class Api::SessionsController < ApplicationController
     end
 
     session[:user_id] = @user.id
-    redirect_to "https://wavesrecords.netlify.com"
+    redirect_to "http://localhost:3001"
   end
 
   def destroy
     session.clear
-    redirect_to "https://wavesrecords.netlify.com"
+    redirect_to "http://localhost:3001"
   end
 
 
