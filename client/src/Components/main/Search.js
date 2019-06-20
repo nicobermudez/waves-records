@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class Search extends Component {
+const Search = props => {
 
-  render() {
     return (
       <div className="mood">
         <form onSubmit={event => this.props.handleSearchSubmit(event)}>
@@ -21,5 +20,6 @@ export default class Search extends Component {
         </form>
       </div>
     )
-  }
 }
+
+export default Search;

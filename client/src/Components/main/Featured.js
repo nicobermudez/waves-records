@@ -1,11 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PlaylistInput from '../playlists/PlaylistInput'
 
-export default class Featured extends Component {
+const Featured = props => {
 
-  render() {
     return(
-
       <div className="playlists">
         {this.props.playlists.map(playlist =>
           <div className="playlist" key={playlist.id}>
@@ -25,5 +23,6 @@ export default class Featured extends Component {
       </div>
 
     )
-  }
 }
+
+export default Featured;

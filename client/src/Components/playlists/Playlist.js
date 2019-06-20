@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PlaylistInput from './PlaylistInput'
 
-export default class Playlist extends Component {
+const Playlist = props => {
 
-  render() {
     return (
       <div className="playlist" key={this.props.playlist.id}>
         <a href={this.props.playlist.href}>
@@ -22,5 +21,6 @@ export default class Playlist extends Component {
         </div>
       </div>
     )
-  }
 }
+
+export default Playlist;
