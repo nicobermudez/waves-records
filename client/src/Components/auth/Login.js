@@ -6,7 +6,6 @@ const handleClick = event => {
   }
 
 const Login = () => {
-
   return (
     <div className="login-auth">
       <input

@@ -4,17 +4,17 @@ import PlaylistInput from './PlaylistInput'
 const Playlist = props => {
 
     return (
-      <div className="playlist" key={this.props.playlist.id}>
-        <a href={this.props.playlist.href}>
-          <img src={this.props.playlist.cover_image} alt=""/>
+      <div className="playlist" key={props.playlist.id}>
+        <a href={props.playlist.href}>
+          <img src={props.playlist.cover_image} alt=""/>
         </a>
         <div className="save">
-          <h3>{this.props.playlist.name}</h3>
+          <h3>{props.playlist.name}</h3>
 
           <PlaylistInput
-            playlist={this.props.playlist}
-            addPlaylist={this.props.addPlaylist}
-            deletePlaylist={this.props.deletePlaylist}
+            playlist={props.playlist}
+            addPlaylist={props.addPlaylist}
+            deletePlaylist={props.deletePlaylist}
             favorited={true}
           />
 

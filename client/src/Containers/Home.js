@@ -87,6 +87,7 @@ class Home extends Component {
             mood={this.props.mood}
             addPlaylist={this.props.addUserPlaylist}
           />
+
         </section>
       </>
     )

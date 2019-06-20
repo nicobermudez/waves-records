@@ -3,9 +3,9 @@ import PlaylistInput from '../playlists/PlaylistInput'
 
 const Featured = props => {
 
-    return(
+    return (
       <div className="playlists">
-        {this.props.playlists.map(playlist =>
+        {props.playlists.map(playlist =>
           <div className="playlist" key={playlist.id}>
             <a href={playlist.external_urls.spotify} key={playlist.id}>
               <img src={playlist.images[0].url} alt="" />
@@ -13,7 +13,7 @@ const Featured = props => {
             <div className="save">
               <h3>{playlist.name}</h3>
               <PlaylistInput
-                addPlaylist={this.props.addPlaylist}
+                addPlaylist={props.addPlaylist}
                 playlist={playlist}
                 isFavorited={false}
               />
@@ -21,7 +21,6 @@ const Featured = props => {
           </div>
         )}
       </div>
-
     )
 }
 
