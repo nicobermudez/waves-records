@@ -1,15 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
 import waves from '../../assets/waves.png'
 import mood from '../../assets/iconmonstr-smiley-13-240.png'
 import listen from '../../assets/iconmonstr-headphones-2-240.png'
 import save from '../../assets/iconmonstr-download-15-240.png'
 
-export default class About extends Component {
+const About = () => {
 
-  render() {
     return (
       <section className="about">
-      
+
         <div className="logo">
           <img src={waves} alt="Waves"/>
         </div>
@@ -39,8 +38,10 @@ export default class About extends Component {
           <footer>
             <p>Made by &copy; Nico</p>
           </footer>
+
         </section>
       </section>
     )
-  }
 }
+
+export default About;

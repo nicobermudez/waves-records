@@ -1,13 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PlaylistInput from '../playlists/PlaylistInput'
 
-export default class Featured extends Component {
+const Featured = props => {
 
-  render() {
-    return(
-
+    return (
       <div className="playlists">
-        {this.props.playlists.map(playlist =>
+        {props.playlists.map(playlist =>
           <div className="playlist" key={playlist.id}>
             <a href={playlist.external_urls.spotify} key={playlist.id}>
               <img src={playlist.images[0].url} alt="" />
@@ -15,7 +13,7 @@ export default class Featured extends Component {
             <div className="save">
               <h3>{playlist.name}</h3>
               <PlaylistInput
-                addPlaylist={this.props.addPlaylist}
+                addPlaylist={props.addPlaylist}
                 playlist={playlist}
                 isFavorited={false}
               />
@@ -23,7 +21,7 @@ export default class Featured extends Component {
           </div>
         )}
       </div>
-
     )
-  }
 }
+
+export default Featured;

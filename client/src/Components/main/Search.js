@@ -1,18 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class Search extends Component {
-
-  render() {
+const Search = props => {
+  
     return (
       <div className="mood">
-        <form onSubmit={event => this.props.handleSearchSubmit(event)}>
+        <form onSubmit={event => props.handleSearchSubmit(event)}>
           <input
             type="text"
             name="mood"
             className="input"
             id="mood"
             placeholder="Search"
-            onChange={event => this.props.handleSearchChange(event)}
+            onChange={event => props.handleSearchChange(event)}
           />
           <input
             className="submit"
@@ -21,5 +20,6 @@ export default class Search extends Component {
         </form>
       </div>
     )
-  }
 }
+
+export default Search;
