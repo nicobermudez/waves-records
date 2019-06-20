@@ -2,7 +2,7 @@ import React from 'react'
 import spotify_login from '../../assets/spotify_login.png'
 
 const handleClick = event => {
-    window.location = "https://sheltered-waters-54715.herokuapp.com/api/auth/login"
+    window.location = "http://localhost:3000/api/auth/login"
   }
 
 const Login = () => {

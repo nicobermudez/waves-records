@@ -1,7 +1,7 @@
 export const fetchUserPlaylists = () => {
 
   return (dispatch) => {
-    fetch("https://sheltered-waters-54715.herokuapp.com/api/playlists", {
+    fetch("http://localhost:3000/api/playlists", {
       headers: {
         "Content-Type": "application/json"
       },

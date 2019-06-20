@@ -44,7 +44,7 @@ class Home extends Component {
   uploadImage(file) {
     const formData = new FormData();
     formData.append('image', file[0])
-    fetch("https://sheltered-waters-54715.herokuapp.com/api/photos", {
+    fetch("http://localhost:3000/api/photos", {
       method: "POST",
       body: formData,
       credentials: "include"

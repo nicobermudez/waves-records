@@ -1,6 +1,6 @@
 export const deletePlaylist = (playlist) => {
   return (dispatch) => {
-    let url = "https://sheltered-waters-54715.herokuapp.com/api/playlists/" + playlist.id
+    let url = "http://localhost:3000/api/playlists/" + playlist.id
     fetch(url, {
       method: "DELETE",
       headers: {
