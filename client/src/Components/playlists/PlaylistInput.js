@@ -7,7 +7,7 @@ export default class PlaylistInput extends Component {
   constructor(props) {
    super(props)
    this.state = {
-      favorited: this.props.favorited || false 
+      favorited: this.props.favorited || false
    }
  }
 

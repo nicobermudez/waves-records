@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { Component } from 'react'
 import waves from '../../assets/waves.png'
 import mood from '../../assets/iconmonstr-smiley-13-240.png'
 import listen from '../../assets/iconmonstr-headphones-2-240.png'
 import save from '../../assets/iconmonstr-download-15-240.png'
 
-const About = () => {
+class About extends Component {
 
+  render() {
     return (
+      <>
       <section className="about">
 
         <div className="logo">
@@ -41,7 +43,9 @@ const About = () => {
 
         </section>
       </section>
+    </>
     )
+  }
 }
 
 export default About;
